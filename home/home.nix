@@ -9,12 +9,22 @@
   home.file.".config/hypr".source = ../hypr;
 
   home.packages = with pkgs; [
+    vim
+    wget
+    mako
+    rofi
+    waybar
     neovim
     firefox
     brave
+    vesktop
     btop
     zsh
+    oh-my-zsh
     kitty
+    git
+    preload
+    hyprpaper
   ];
 
   # Kitty
@@ -27,9 +37,10 @@
   # Set ZSH as default Shell
 
   # home.sessionVariables.SHELL = "$(pkgs.zsh)/bin/zsh"
+   
+  programs.zsh.enable = true;
 
   programs.zsh = {
-  enable = true;
 
   oh-my-zsh = {
   enable = true;
@@ -40,4 +51,5 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
   };
+
 }

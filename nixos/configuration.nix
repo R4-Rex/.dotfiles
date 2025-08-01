@@ -53,6 +53,7 @@
     isNormalUser = true;
     description = "rex";
     extraGroups = [ "networkmanager" "wheel" ];
+    # shell = pkgs.zsh; # ZSH
     packages = with pkgs; [];
   };
 
@@ -80,27 +81,17 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # ZSH Program
+
   programs.zsh.enable = true;
+  users.users.rex.shell = pkgs.zsh;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+ # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    
     hyprland
-    neovim
-    waybar
-    rofi
-    mako
-    vesktop
-    brave
-    git
-    oh-my-zsh
-    btop
-    hyprpaper
-    preload
-    firefox
-
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

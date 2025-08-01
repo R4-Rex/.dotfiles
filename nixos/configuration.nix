@@ -61,8 +61,8 @@
 
 
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   programs.hyprland = {
 
@@ -79,6 +79,9 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # ZSH Program
+  programs.zsh.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -93,7 +96,6 @@
     brave
     git
     oh-my-zsh
-    kitty
     btop
     hyprpaper
     preload

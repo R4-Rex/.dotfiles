@@ -42,6 +42,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -85,11 +87,16 @@
   programs.zsh.enable = true;
   users.users.rex.shell = pkgs.zsh;
 
+  # Preload Service
+
+  services.preload.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
  # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     
+    preload
     hyprland
     zsh
   ];

@@ -25,6 +25,7 @@
     git
     preload
     hyprpaper
+    bibata-cursors
   ];
 
   # Kitty
@@ -34,12 +35,19 @@
   enable = true;
 
 };
-  # Set ZSH as default Shell
+ 
+ # hyprland
+
+ home.sessionVariables = {
+  XCURSOR_THEME = "Bibata-Modern-Ice";
+  XCURSOR_SIZE = "32";
+ };
+
+ #! Set ZSH as default Shell
 
   # home.sessionVariables.SHELL = "$(pkgs.zsh)/bin/zsh"
    
   programs.zsh.enable = true;
-
   programs.zsh = {
 
   oh-my-zsh = {

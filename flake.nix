@@ -1,29 +1,36 @@
 {
-  description = "Home Manager config with flakes";
+ description = "rex's NixOS + Home Manager Flake setup";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
       system = "x86_64-linux";
       username = "rex";
-      pkgs = import nixpkgs {inherit system;}
-     in{
-       homeConfiguration.${username} = home-manager.lib.homeManagerConfiguratiob {
 
-       inherit pkgs;
-       modules = [./home/default.nix];
-       extraSpecialArgs = {inherit username;};
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
       };
+    in
+    {
+      nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-     };
-    #packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+        modules = [
+          ./nixos/configuration.nix
 
-    #packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-  };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home/home.nix;
+          }
+        ];
+      };
+    };
 }

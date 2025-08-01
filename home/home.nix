@@ -20,5 +20,7 @@
   ];
 
   programs.zsh.enable = true;
-  # Add more options as needed
+  theme = "josh";
+  plugins = ["kitty", "git", "git-commit"];
+  
 }

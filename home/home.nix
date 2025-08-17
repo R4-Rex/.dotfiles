@@ -40,7 +40,7 @@
 
  home.sessionVariables = {
   XCURSOR_THEME = "Bibata-Modern-Ice";
-  XCURSOR_SIZE = "32";
+  XCURSOR_SIZE = "26";
  };
 
  #! Set ZSH as default Shell

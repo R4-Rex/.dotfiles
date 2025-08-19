@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -31,18 +31,16 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+    LC_ADDRESS = "es_US.UTF-8";
+    LC_IDENTIFICATION = "es_US.UTF-8";
+    LC_MEASUREMENT = "es_US.UTF-8";
+    LC_MONETARY = "es_US.UTF-8";
+    LC_NAME = "es_US.UTF-8";
+    LC_NUMERIC = "es_US.UTF-8";
+    LC_PAPER = "es_US.UTF-8";
+    LC_TELEPHONE = "es_US.UTF-8";
+    LC_TIME = "es_US.UTF-8";
   };
-
-
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -53,52 +51,61 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rex = {
     isNormalUser = true;
-    description = "rex";
+    description = "Rex";
     extraGroups = [ "networkmanager" "wheel" ];
-    # shell = pkgs.zsh; # ZSH
     packages = with pkgs; [];
   };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "rex";
-
-
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-
-  programs.hyprland = {
-
-   enable = true;
-   xwayland.enable = true;
-   withUWSM = true;
-};
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Experimental Features (Flakes, nix-command)
+  # Hyprland
+  
+  programs.hyprland = {
+  enable = true;
+  xwayland.enable = true;
+};
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  environment.sessionVariables = {
+   WLR_NO_HARDWARE_CURSORS = "1";
+   NIXOS_OZONE_WL = "1";
+};
 
-  # ZSH Program
+  services.xserver.videoDriver = ["amdgpu"];
 
-  programs.zsh.enable = true;
-  users.users.rex.shell = pkgs.zsh;
+  hardware = {
+    # OpenGl
+    graphics = {
+    enable = true;
 
-  # Preload Service
+   extraPackages = with pkgs; [
+    mesa
+    vulkan-loader
+    vulkan-tools
+    vulkan-validation-layers
+   ];
+ };
+};
 
-  services.preload.enable = true;
+   xdg.portal = {
+     enable = true;
+     extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
- # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    
-    preload
-    hyprland
-    zsh
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    kitty
+    waybar
+    dunst
+    libnotify
+    swww
+    rofi-wayland
+    firefox
+    brave
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -127,4 +134,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
 }

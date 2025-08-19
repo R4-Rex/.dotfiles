@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /etc/hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -53,7 +53,9 @@
     isNormalUser = true;
     description = "Rex";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+    
+    ];
   };
 
   # Allow unfree packages
@@ -64,7 +66,7 @@
   programs.hyprland = {
   enable = true;
   xwayland.enable = true;
-};
+  };
 
   environment.sessionVariables = {
    WLR_NO_HARDWARE_CURSORS = "1";
@@ -74,9 +76,9 @@
   services.xserver.videoDriver = ["amdgpu"];
 
   hardware = {
-    # OpenGl
-    graphics = {
-    enable = true;
+   # OpenGl
+   graphics = {
+   enable = true;
 
    extraPackages = with pkgs; [
     mesa
@@ -88,9 +90,11 @@
 };
 
    xdg.portal = {
-     enable = true;
-     extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -103,9 +107,9 @@
     libnotify
     swww
     rofi-wayland
-    firefox
-    brave
     git
+    brave
+    firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

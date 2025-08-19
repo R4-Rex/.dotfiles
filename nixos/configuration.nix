@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -53,6 +53,7 @@
     isNormalUser = true;
     description = "Rex";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     
     ];
@@ -111,6 +112,10 @@
     brave
     firefox
   ];
+
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

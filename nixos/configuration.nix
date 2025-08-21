@@ -47,6 +47,11 @@
     layout = "us";
     variant = "";
   };
+  services.xserver.enable = true;
+   services.displayManager.sddm.enable = true;
+   services.displayManager.sddm.wayland.enable = true;
+   services.displayManager.sddm.theme = "where_is_my_sddm_theme";
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rex = {
@@ -74,7 +79,7 @@
    NIXOS_OZONE_WL = "1";
 };
 
-  services.xserver.videoDriver = ["amdgpu"];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   hardware = {
    # OpenGl

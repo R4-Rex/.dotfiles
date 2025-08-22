@@ -11,6 +11,10 @@ in
   programs.zsh = {
   enable = true;
   
+  enableCompletion = true;
+  autosuggestions = true;
+  syntaxHighlighting = true;
+
   autocd = true;
 
   shellAliases = myAliases;
@@ -18,7 +22,7 @@ in
   oh-my-zsh = {
       enable = true;
       theme = "agnoster";
-      plugins = [ "git" "z" "sudo" "colored-man-pages" "colorize" "history"];
+      plugins = [ "git" "z" "sudo" "colored-man-pages" "colorize" "history" "command-not-found"];
     };
    };
   }

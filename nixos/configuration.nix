@@ -2,19 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, systemSettings, userSettings,... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../modules/packages.nix
+      ../modules/opengl.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -24,22 +26,23 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = null;
+  # Time zone.
+  time.timeZone = systemSettings.timezone;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = systemSettings.locale;
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+  i18n.extraLocaleSettings = { 
+  
+    LC_ADDRESS = systemSettings.locale;
+    LC_IDENTIFICATION = systemSettings.locale;
+    LC_MEASUREMENT = systemSettings.locale;
+    LC_MONETARY = systemSettings.locale;
+    LC_NAME = systemSettings.locale;
+    LC_NUMERIC = systemSettings.locale;
+    LC_PAPER = systemSettings.locale;
+    LC_TELEPHONE = systemSettings.locale;
+    LC_TIME = systemSettings.locale;
   };
 
   # Configure keymap in X11
@@ -54,7 +57,7 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rex = {
+  users.users.${userSettings.username} = {
     isNormalUser = true;
     description = "Rex";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -79,21 +82,21 @@
    NIXOS_OZONE_WL = "1";
 };
 
-  services.xserver.videoDrivers = ["amdgpu"];
+#  services.xserver.videoDrivers = ["amdgpu"];
 
-  hardware = {
+#  hardware = {
    # OpenGl
-   graphics = {
-   enable = true;
+#   graphics = {
+#   enable = true;
 
-   extraPackages = with pkgs; [
-    mesa
-    vulkan-loader
-    vulkan-tools
-    vulkan-validation-layers
-   ];
- };
-};
+#   extraPackages = with pkgs; [
+#    mesa
+#    vulkan-loader
+#    vulkan-tools
+#    vulkan-validation-layers
+#   ];
+# };
+#};
 
    xdg.portal = {
     enable = true;
@@ -104,19 +107,19 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    kitty
-    waybar
-    dunst
-    libnotify
-    swww
-    rofi-wayland
-    git
-    brave
-    firefox
-  ];
+#  environment.systemPackages = with pkgs; [
+#    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+#    wget
+#    kitty
+#    waybar
+#    dunst
+#    libnotify
+#    swww
+#    rofi-wayland
+#    git
+#    brave
+#    firefox
+#  ];
 
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;

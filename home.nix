@@ -13,6 +13,16 @@
   home.username = "rex";
   home.homeDirectory = "/home/rex";
 
+<<<<<<< HEAD
+=======
+  programs.git = {
+
+  enable = true;
+  userName = "Rex";
+  userEmail = "noone@gmail.com";
+  };
+
+>>>>>>> d2df6a1 (Changed Flakes and added some modularity, added Git config)
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

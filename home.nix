@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 
@@ -10,19 +10,16 @@
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "rex";
-  home.homeDirectory = "/home/rex";
+  home.username = userSettings.username;
+  home.homeDirectory = "/home/${userSettings.username}";
 
-<<<<<<< HEAD
-=======
   programs.git = {
 
   enable = true;
-  userName = "Rex";
-  userEmail = "noone@gmail.com";
+  userName = userSettings.name;
+  userEmail = userSettings.email;
   };
 
->>>>>>> d2df6a1 (Changed Flakes and added some modularity, added Git config)
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

@@ -10,7 +10,7 @@
   libnotify
   rofi-wayland
   git
-  brave
+  librewolf
   firefox
   ];
 }

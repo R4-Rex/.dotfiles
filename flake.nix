@@ -20,7 +20,7 @@
       };
     userSettings = {
         username = "rex";
-        name = "Rex";
+        name = "R4-Rex";
         email = "itsrex@gmail.com";
 	term = "kitty";
 	editor = "neovim";
@@ -31,20 +31,28 @@
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 
   in {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        system = systemSettings.system;
-        modules = [ ./nixos/configuration.nix ];
+    nixosConfigurations.nixos = lib.nixosSystem {
+
+	system = systemSettings.system;
 	specialArgs = { inherit systemSettings userSettings; };
+
+        modules = [ ./nixos/configuration.nix ];
+       };
+
+    homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration 
+    {
+      pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+      extraSpecialArgs = 
+      { 
+        inherit systemSettings userSettings; 
+        inherit inputs; # Pass inputs if needed in home.nix
       };
-    };
-    homeConfigurations = {
-      rex = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
-	modules = [./home.nix];
-	extraspecialArgs = { inherit systemSettings userSettings; };
-      };
-    };
-  };
+
+      modules = [ 
+        ./home.nix
+	#...
+	];
+     };
+   };
 }
 

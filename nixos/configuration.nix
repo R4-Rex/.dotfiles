@@ -50,11 +50,13 @@
     layout = "us";
     variant = "";
   };
-  services.xserver.enable = true;
-   services.displayManager.sddm.enable = true;
-   services.displayManager.sddm.wayland.enable = true;
-   services.displayManager.sddm.theme = "where_is_my_sddm_theme";
+  services.xserver.enable = false;
 
+   services.displayManager.sddm = {
+   enable = true;
+   wayland.enable = true;
+   theme = "sddm-astronaut";
+};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userSettings.username} = {

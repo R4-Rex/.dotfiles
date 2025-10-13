@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../modules/packages.nix
       ../modules/gpu.nix
+      ../modules/greetd.nix
     ];
 
   # Bootloader.

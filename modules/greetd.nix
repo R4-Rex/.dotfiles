@@ -1,4 +1,4 @@
-{pkgs,inputs,...}:
+{pkgs,inputs, userSettings,...}:
 
 let
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
@@ -9,9 +9,15 @@ in {
   services.greetd = {
     enable = true;
     settings = {
+      initial_session = {
+
+      command = "hyprland";
+      user = "${userSettings.username}";
+
+      };
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}";
-        user = "rex";
+        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --window-padding 2";
+        user = "greeter";
       };
     };
   };

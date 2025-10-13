@@ -45,19 +45,6 @@
     LC_TIME = systemSettings.locale;
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-  services.xserver.enable = false;
-
-   services.displayManager.sddm = {
-   enable = true;
-   wayland.enable = true;
-   theme = "sddm-astronaut";
-};
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userSettings.username} = {
     isNormalUser = true;

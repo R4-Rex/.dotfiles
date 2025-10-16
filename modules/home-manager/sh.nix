@@ -12,8 +12,8 @@ in
   enable = true;
   
   enableCompletion = true;
-  autosuggestions = true;
-  syntaxHighlighting = true;
+  autosuggestion.enable = true;
+  syntaxHighlighting.enable = true;
 
   autocd = true;
 

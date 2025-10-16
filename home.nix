@@ -4,7 +4,7 @@
 
   imports = [
 
-  ./modules/sh.nix
+  ./modules/home-manager/default.nix
   
   ];
 
@@ -12,13 +12,6 @@
   # manage.
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
-
-  programs.git = {
-
-  enable = true;
-  userName = userSettings.name;
-  userEmail = userSettings.email;
-  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

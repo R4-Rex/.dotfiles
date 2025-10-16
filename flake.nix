@@ -31,6 +31,10 @@
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 
   in {
+
+    # 🖥️  NIXOS SYSTEM CONFIGURATION
+    # Command: sudo nixos-rebuild switch --flake .
+    
     nixosConfigurations.nixos = lib.nixosSystem {
 
 	system = systemSettings.system;
@@ -38,8 +42,10 @@
 
         modules = [ ./nixos/configuration.nix ];
        };
+	
+	# 🏠  STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED) # home-manager switch
 
-    homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration 
+     homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration 
     {
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
       extraSpecialArgs = 

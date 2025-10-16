@@ -8,9 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../modules/packages.nix
-      ../modules/gpu.nix
-      ../modules/greetd.nix
+
+      # NixOS Modules
+      ../modules/nixos/default.nix
     ];
 
   # Bootloader.

@@ -9,12 +9,22 @@ in {
   services.greetd = {
     enable = true;
     settings = {
+
+/*
+    Feature?
+    First boot: Uses initial_session (auto-login, no password)
+
+    After logout: Uses default_session (shows greeter, requires password)
+
+    Subsequent boots: Uses default_session (always shows greeter)
+
       initial_session = {
 
       command = "hyprland";
       user = "${userSettings.username}";
 
-      };
+      }; */
+
       default_session = {
         command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --window-padding 2";
         user = "greeter";

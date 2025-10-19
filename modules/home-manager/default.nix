@@ -4,5 +4,6 @@
   imports = [
     ./sh.nix
     ./git.nix
+    ./hyprpaper.nix
   ];
 }

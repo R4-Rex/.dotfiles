@@ -43,7 +43,7 @@
         modules = [ ./nixos/configuration.nix ];
        };
 	
-	# 🏠  STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED) # home-manager switch
+	# 🏠  STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED) # home-manager switch --flake #user
 
      homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration 
     {

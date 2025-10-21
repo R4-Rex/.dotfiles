@@ -9,6 +9,8 @@
    
     ./hyprpaper.nix
 
+    ./theme.nix
+
     # Librewolf Config
     ./librewolf/librewolf.nix
   ];

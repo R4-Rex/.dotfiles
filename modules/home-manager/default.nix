@@ -5,7 +5,7 @@
     
     ./sh.nix
 
-    ./git.nix
+    ./git/git.nix
    
     ./hyprpaper.nix
 

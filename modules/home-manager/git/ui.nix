@@ -29,7 +29,7 @@
     # Delta configuration (syntax-highlighting pager)
     delta = {
       features = "side-by-side line-numbers decorations";
-      syntax-theme = "GitHub";
+      syntax-theme = "Dracula";
       plus-style = "syntax #012800";
       minus-style = "syntax #340001";
       decorations = {

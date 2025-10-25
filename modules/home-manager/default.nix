@@ -11,6 +11,8 @@
 
     ./theme.nix
 
+    ./clipboard.nix
+
     # Librewolf Config
     ./librewolf/librewolf.nix
   ];

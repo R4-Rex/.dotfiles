@@ -6,6 +6,8 @@
     ./sh.nix
 
     ./git/git.nix
+
+    ./onefetch.nix
    
     ./hyprpaper.nix
 

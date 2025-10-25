@@ -6,7 +6,8 @@
 
   ./aliases.nix
   ./utils.nix
-  
+  ./diff.nix
+  ./ui.nix
   ];
 
   programs.git = {

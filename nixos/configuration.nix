@@ -60,13 +60,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-   xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
+  # Enable Experimental features
 
    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # ZSH!
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;

@@ -60,56 +60,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Hyprland
-  
-  programs.hyprland = {
-  enable = true;
-  xwayland.enable = true;
-  };
-
-  environment.sessionVariables = {
-   WLR_NO_HARDWARE_CURSORS = "1";
-   NIXOS_OZONE_WL = "1";
-};
-
-#  services.xserver.videoDrivers = ["amdgpu"];
-
-#  hardware = {
-   # OpenGl
-#   graphics = {
-#   enable = true;
-
-#   extraPackages = with pkgs; [
-#    mesa
-#    vulkan-loader
-#    vulkan-tools
-#    vulkan-validation-layers
-#   ];
-# };
-#};
-
    xdg.portal = {
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-#  environment.systemPackages = with pkgs; [
-#    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-#    wget
-#    kitty
-#    waybar
-#    dunst
-#    libnotify
-#    swww
-#    rofi-wayland
-#    git
-#    brave
-#    firefox
-#  ];
 
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;

@@ -1,31 +1,26 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
-  # amdgpu loads early
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  # Use radeon driver for R7 250 (not amdgpu)
+  boot.initrd.kernelModules = [ "radeon" ];
+  boot.kernelModules = [ "radeon" ];
 
+  # Radeon-specific kernel parameters
+  boot.kernelParams = [
+    # R7 250 stability
+    "radeon.dpm=1"              # Enable power management
+    "radeon.audio=0"            # Disable HDMI audio (reduces complexity)
+    "radeon.sg_display=0"       # Disable scatter-gather display
+  ];
+
+  # Mesa with Radeon support
   hardware.graphics = {
     enable = true;
-
     extraPackages = with pkgs; [
-    
-    # VA-API for video acceleration
-    libva
-    libva-utils
-  
-    # Vulkan Support
-    vulkan-loader
-    vulkan-tools
-    vulkan-validation-layers
-    amdvlk
-
-    # ROCm for OpenCL/compute
-    rocmPackages.clr.icd
-   ];
-    extraPackages32 = with pkgs; [
-      # 32-bit support for compatibility
-      driversi686.linux.mesa
-      driversi686.linux.amdvlk
+      mesa
+      libva
+      vulkan-loader
     ];
-   };
+  };
+
 }

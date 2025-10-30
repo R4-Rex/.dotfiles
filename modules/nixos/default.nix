@@ -1,6 +1,8 @@
 {
   imports = [
   ./gpu.nix
+
+  ./htop.nix
   
   ./greetd.nix
   

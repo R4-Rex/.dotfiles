@@ -1,0 +1,8 @@
+keys:
+  - &rex_user age1000fct0dat43p9jfrc63k9vcjur4wuk8999hd8fw337354sp2s5qs8ej80  # Public Age Key
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *rex_user

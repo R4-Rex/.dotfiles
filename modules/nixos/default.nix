@@ -7,6 +7,8 @@
   ./memory.nix
   
   ./packages.nix
+
+  ./preload.nix
   
   ./hyprland.nix
   

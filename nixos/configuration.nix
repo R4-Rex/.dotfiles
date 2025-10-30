@@ -2,9 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, systemSettings, userSettings,... }:
+{ config, pkgs, systemSettings, userSettings, ... }:
+
 
 {
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -28,10 +30,10 @@
   networking.networkmanager.enable = true;
 
   # Time zone.
-  time.timeZone = systemSettings.timezone;
+  time.timeZone = null;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = systemSettings.locale;
+  i18n.defaultLocale = systemSettings.locale; 
 
   i18n.extraLocaleSettings = { 
   
@@ -95,5 +97,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+  
 
 }

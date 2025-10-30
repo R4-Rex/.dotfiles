@@ -13,8 +13,8 @@
   programs.git = {
 
     enable = true;
-    userName = userSettings.name;
-    userEmail = userSettings.email;
+    userName = builtins.readFile config.sops.secrets.name.path;
+    userEmail = builtins.readFile config.sops.secrets.email.path;
 
     extraConfig = {
       

@@ -1,4 +1,3 @@
--- Starter Config
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
@@ -22,9 +21,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<leader>q", "<cmd>Bdelete!<CR>", opts)
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
@@ -38,6 +34,12 @@ keymap("n", "<C-a>", "ggVG", opts)
 -- Move selected line / block of text
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- Lazy.nvim
+keymap("n", "<leader>l", ":Lazy<CR>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

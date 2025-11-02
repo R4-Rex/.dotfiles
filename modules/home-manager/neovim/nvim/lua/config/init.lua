@@ -1,4 +1,4 @@
 
-require('config.options')
-require('config.keymaps')
-require('config.plugins')  -- We'll create this later for Lazy.nvim
+require('config.options') -- Import options.lua
+require('config.keymaps') -- keymaps.lua
+require('config.lazy') -- lazy.lua

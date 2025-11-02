@@ -5,10 +5,10 @@ return {
 
   -- Colorscheme
   {
-    "ellisonleao/gruvbox.nvim",
+    "rebelot/kanagawa.nvim",
     priority = 1000, -- Load first
     config = function()
-      vim.cmd.colorscheme("gruvbox")
+      vim.cmd.colorscheme("kanagawa-dragon")
     end,
   },
 
@@ -28,7 +28,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "gruvbox",
+          theme = "kanagawa-dragon",
         },
       })
     end,
@@ -39,7 +39,8 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "query", "nix" },
+        ensure_installed = { "lua", "vim", "nix", "css", "javascript", "html", 
+  "markdown", "json", "yaml", "bash", "python", "hyprlang" },
         sync_install = false,
         auto_install = false,
         highlight = {

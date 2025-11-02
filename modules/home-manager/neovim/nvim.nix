@@ -15,10 +15,11 @@
 
     plugins = with pkgs.vimPlugins; [
       
+	# Will use lazy vim or something??
 
       ];
-    
-    extraConfig = '''';
-
   };
+
+  xdg.configFile."nvim".source = ./nvim;
+
 }

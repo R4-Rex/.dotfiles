@@ -7,6 +7,8 @@
 
     ./git/git.nix
 
+    ./neovim/nvim.nix
+
     ./onefetch.nix
    
     ./hyprpaper.nix

@@ -7,6 +7,8 @@
 
     ./git/git.nix
 
+    ./security/sops.nix
+
     ./neovim/nvim.nix
 
     ./onefetch.nix

@@ -78,9 +78,11 @@
       };
 
       modules = [ 
-        ./home.nix
-	inputs.sops-nix.homeManagerModules.sops
+        
+	./home.nix
+	inputs.sops-nix.homeManagerModules.sops	
 	#...
+	
 	];
      };
  

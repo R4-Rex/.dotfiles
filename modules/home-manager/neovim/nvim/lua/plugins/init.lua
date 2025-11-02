@@ -28,7 +28,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "kanagawa-dragon",
+          theme = "auto",
         },
       })
     end,

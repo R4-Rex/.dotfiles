@@ -17,5 +17,10 @@
   ./xdg-portals.nix
 
   ./security/default.nix
+
+  # Compilers
+
+  ./compilers/default.nix
+  
   ];
 }

@@ -119,8 +119,12 @@
   # Yellow previous command duration.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
 
-  # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$grey
+  # Git prompt.
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=2
+
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=5
+  
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=3
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.

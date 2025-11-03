@@ -3,7 +3,7 @@
 {
   imports = [
     
-    ./sh.nix
+    ./zsh/default.nix
 
     ./git/git.nix
 

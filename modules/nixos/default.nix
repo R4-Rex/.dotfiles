@@ -10,6 +10,8 @@
   
   ./packages.nix
 
+  ./fonts.nix
+
   ./preload.nix
   
   ./hyprland.nix

@@ -17,6 +17,8 @@
 
     ./theme.nix
 
+    ./kitty/default.nix
+
     ./clipboard.nix
 
     # Librewolf Config

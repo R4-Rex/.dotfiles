@@ -5,6 +5,8 @@
     
     ./zsh/default.nix
 
+    ./cursors.nix
+
     ./git/git.nix
 
     ./security/sops.nix

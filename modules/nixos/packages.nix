@@ -19,6 +19,7 @@
   # Browser
   librewolf
   firefox
+  tor-browser
   
   # Discord
   vesktop

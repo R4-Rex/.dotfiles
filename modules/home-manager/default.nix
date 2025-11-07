@@ -14,9 +14,9 @@
     ./neovim/nvim.nix
 
     ./onefetch.nix
-   
-    ./hyprpaper.nix
 
+    ./hypr/default.nix
+   
     ./theme.nix
 
     ./kitty/default.nix

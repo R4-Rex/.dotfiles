@@ -1,0 +1,17 @@
+/**
+ *
+ * Rose Pine Moon Color Scheme
+ * Darker variant of rose-pine
+ * GitHub: https://github.com/rose-pine
+ *
+ * Colors
+ **/
+
+* {
+    background:     #232136FF;
+    background-alt: #2a273fFF;
+    foreground:     #e0def4FF;
+    selected:       #3e8fb0FF;
+    active:         #9ccfd8FF;
+    urgent:         #eb6f92FF;
+}

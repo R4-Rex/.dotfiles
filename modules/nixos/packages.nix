@@ -12,8 +12,6 @@
   dunst
   libnotify
   
-  rofi-wayland
-  
   git
   
   # Browser

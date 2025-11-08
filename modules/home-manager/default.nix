@@ -19,6 +19,8 @@
    
     ./theme.nix
 
+    ./rofi/default.nix
+
     ./kitty/default.nix
 
     ./clipboard.nix

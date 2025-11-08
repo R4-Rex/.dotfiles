@@ -8,6 +8,9 @@
 
       confirm_os_window_close = 0;
       
+      #Fonts!
+      font_size = 14;
+      
       # Window layout
       remember_window_size = true;
       initial_window_width = 1200;

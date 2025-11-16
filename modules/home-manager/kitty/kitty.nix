@@ -9,6 +9,7 @@
       confirm_os_window_close = 0;
       
       #Fonts!
+      font_family = "FiraCode Nerd Font";
       font_size = 14;
       
       # Window layout

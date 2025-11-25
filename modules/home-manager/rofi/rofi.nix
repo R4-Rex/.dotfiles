@@ -17,6 +17,8 @@ in {
   /*****----- Themes -----*****/
   
   xdg.dataFile."${themesDir}/style-1.rasi".source = ./themes/style-1.rasi;
+  
+  xdg.dataFile."${themesDir}/something.rasi".source = ./themes/something.rasi;
 
   /*****----- Shared -----*****/
 

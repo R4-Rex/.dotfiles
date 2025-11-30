@@ -8,6 +8,9 @@
   kitty
 
   waybar
+
+  # Image Viewer
+  swayimg
   
   dunst
   libnotify

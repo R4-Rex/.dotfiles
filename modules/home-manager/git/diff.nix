@@ -6,7 +6,7 @@
     meld                   # GUI diff/merge tool
   ];
 
-  programs.git.extraConfig = {
+  programs.git.settings = {
     # Use diff-so-fancy for better diffs
     core.attributesfile = "~/.gitattributes";
     

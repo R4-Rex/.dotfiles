@@ -6,7 +6,7 @@
     # Enhanced Git utilities
     gh                          # GitHub CLI
     git-extras                  # Additional git commands
-    gitflow                    # Git flow extensions
+    gitflow                     # Git flow extensions
     
     # Interactive tools
     lazygit                     # Terminal UI for git
@@ -21,7 +21,7 @@
     gnupg                       # For commit signing
   ];
 
-  programs.git.extraConfig = {
+  programs.git.settings = {
     # Use delta for diff if available
     core.pager = "${pkgs.delta}/bin/delta";
     interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";

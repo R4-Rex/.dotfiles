@@ -1,7 +1,7 @@
 {config, pkgs, ...}:
 
 {
-  programs.git.aliases = {
+  programs.git.settings.alias = {
     
     co = "checkout";
     br = "branch";

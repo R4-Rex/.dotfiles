@@ -1,7 +1,7 @@
 {config, pkgs, ...}:
 
 {
-  programs.git.extraConfig = {
+  programs.git.settings = {
     # Colors everywhere
     color.ui = "auto";
     

@@ -13,15 +13,16 @@
   programs.git = {
 
     enable = true;
-    userName = "R4-Rex";
-    userEmail = "itsrex.dev@gmail.com";
 
-    extraConfig = {
-      
-      pull.rebase = false;
-      push.autoSetupRemote = true;
-      merge.conflictstyle = "zdiff3";
-    
+    settings = {
+
+    user.name = "R4-Rex";
+    user.email = "itsrex.dev@gmail.com";
+
+    pull.rebase = false;
+    push.autoSetupRemote = true;
+    merge.conflictstyle = "zdiff3";
+
       };
     
     };

@@ -19,16 +19,11 @@
 
 # Disk Based Swap
 
-swapDevices = [
-{
-  device = "/swapfile";
-  size = 8 * 1024; # 8GB swap
-}
-];
+  swapDevices = [
+  {
+    device = "/swapfile";
+    size = 8 * 1024; # 8GB swap
+  }
+  ];
 
-  # Systemd memory limits for critical services
-  systemd.extraConfig = ''
-    DefaultMemoryMax=6G
-    DefaultMemorySwapMax=2G
-  '';
 }

@@ -12,8 +12,6 @@
 
   ./fonts.nix
 
-  ./preload.nix
-  
   ./hyprland.nix
   
   ./xdg-portals.nix

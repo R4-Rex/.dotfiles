@@ -7,7 +7,7 @@ in {
     
     enable = true;
 
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     
     terminal = "${pkgs.kitty}/bin/kitty";
     theme = "${config.xdg.dataHome}/${themesDir}/style-1.rasi";

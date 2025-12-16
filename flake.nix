@@ -59,8 +59,6 @@
 	
 	  ./nixos/configuration.nix
 	
-	  sops-nix.nixosModules.sops
-	
 	];
        };
 	
@@ -77,16 +75,17 @@
         inherit inputs; # Pass inputs if needed in home.nix
       };
 
-      modules = [ 
+      modules = [
         
-	./home.nix
-	inputs.sops-nix.homeManagerModules.sops	
-	#...
-	
-	];
-     };
- 
-   };
+        # Sops Home-manager module
+        ./home.nix
+        {
+          imports = [ inputs.sops-nix.homeManagerModules.sops ];	
+        #...
+        }
+      ];
+    };
+  };
 
 }
 

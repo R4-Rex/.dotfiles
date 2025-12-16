@@ -1,5 +1,4 @@
 {config, pkgs, userSettings, ...}:
-
 {
 
   imports = [
@@ -16,8 +15,8 @@
 
     settings = {
 
-    user.name = "R4-Rex";
-    user.email = "itsrex.dev@gmail.com";
+    user.name = "config.sops.secrets.username";
+    user.email = "config.sops.secrets.email";
 
     pull.rebase = false;
     push.autoSetupRemote = true;

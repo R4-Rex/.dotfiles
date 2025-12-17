@@ -1,4 +1,4 @@
-{config, pkgs, userSettings, ...}:
+{config, pkgs, userSettings, myvars, ...}:
 {
 
   imports = [
@@ -15,8 +15,8 @@
 
     settings = {
 
-    user.name = "config.sops.secrets.username";
-    user.email = "config.sops.secrets.email";
+    user.name = myvars.user.gitName;
+    user.email = myvars.user.gitEmail;
 
     pull.rebase = false;
     push.autoSetupRemote = true;

@@ -9,23 +9,18 @@
     
     # Home-Manager!
     home-manager = {
-
     url = "github:nix-community/home-manager/release-25.11";
     inputs.nixpkgs.follows = "nixpkgs"; # makes sure both nixpkgs reference is the same
-    
     };
-
-    # SOPS! ENCRYPTION!
-    sops-nix = {
-
-    url = "github:Mic92/sops-nix";
-    inputs.nixpkgs.follows = "nixpkgs";
-
+    
+    # My Vars!
+    myvars = {
+    url = "git+file:///home/user/.vars";
+};
+    
   };
 
-  };
-
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @inputs:
 
   let
     systemSettings = {
@@ -77,12 +72,10 @@
 
       modules = [
         
-        # Sops Home-manager module
+        # Home-manager module
         ./home.nix
-        {
-          imports = [ inputs.sops-nix.homeManagerModules.sops ];	
+
         #...
-        }
       ];
     };
   };

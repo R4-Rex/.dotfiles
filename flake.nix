@@ -20,7 +20,7 @@
     
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, myvars, ... } @inputs:
 
   let
     systemSettings = {
@@ -34,12 +34,14 @@
       term = "kitty";
       editor = "neovim";
     };
+    
+    vars = myvars.user;
 
     lib = nixpkgs.lib;
     system = systemSettings.system;
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-    in {
 
+in {
 
     #  NIXOS SYSTEM CONFIGURATION
     # Command: sudo nixos-rebuild switch --flake .
@@ -48,7 +50,7 @@
 
     	inherit system;
 
-	specialArgs = { inherit systemSettings userSettings; };
+	specialArgs = { inherit systemSettings userSettings myvars; };
 
 	modules = [ 
 	
@@ -68,6 +70,7 @@
       { 
         inherit systemSettings userSettings; 
         inherit inputs; # Pass inputs if needed in home.nix
+        myvars = vars;
       };
 
       modules = [

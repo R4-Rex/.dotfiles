@@ -15,8 +15,8 @@
 
     settings = {
 
-    user.name = myvars.user.gitName;
-    user.email = myvars.user.gitEmail;
+    user.name = myvars.gitName;
+    user.email = myvars.gitEmail;
 
     pull.rebase = false;
     push.autoSetupRemote = true;

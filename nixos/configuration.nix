@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, systemSettings, userSettings, ... }:
+{ config, pkgs, systemSettings, userSettings, vars, ... }:
 
 
 {
@@ -30,7 +30,7 @@
   networking.networkmanager.enable = true;
 
   # Time zone.
-  time.timeZone = null;
+  time.timeZone = vars.user.timezone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = systemSettings.locale; 

@@ -19,6 +19,7 @@
     
     # Security & signing
     gnupg                       # For commit signing
+    git-crypt
   ];
 
   programs.git.settings = {

@@ -23,8 +23,8 @@
     },
     "myvars": {
       "locked": {
-        "lastModified": 1766312187,
-        "narHash": "sha256-4fwfa0ufEXN2zBz06aFcCdRNq8wcFMDsepf/fIOR3RA=",
+        "lastModified": 1766330620,
+        "narHash": "sha256-JHZhIopYklP3+81wWU9O8V4AbbrOGDN/+1FR5yaQIro=",
         "path": "/home/rex/.vars",
         "type": "path"
       },

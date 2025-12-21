@@ -1,4 +1,4 @@
-{config, pkgs, userSettings, myvars, ...}:
+{config, pkgs, userSettings, vars, ...}:
 {
 
   imports = [
@@ -7,6 +7,7 @@
   ./utils.nix
   ./diff.nix
   ./ui.nix
+  
   ];
 
   programs.git = {
@@ -15,8 +16,8 @@
 
     settings = {
 
-    user.name = myvars.gitName;
-    user.email = myvars.gitEmail;
+    user.name = vars.git.name;
+    user.email = vars.git.email;
 
     pull.rebase = false;
     push.autoSetupRemote = true;

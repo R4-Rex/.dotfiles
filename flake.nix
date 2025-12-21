@@ -15,8 +15,8 @@
     
     # My Vars!
     myvars = {
-    url = "git+file:///home/user/.vars";
-};
+      url = "git+file:///home/user/.vars";
+    };
     
   };
 
@@ -34,8 +34,8 @@
       term = "kitty";
       editor = "neovim";
     };
-    
-    vars = myvars.user;
+
+    vars = myvars.secrets;
 
     lib = nixpkgs.lib;
     system = systemSettings.system;
@@ -50,7 +50,7 @@ in {
 
     	inherit system;
 
-	specialArgs = { inherit systemSettings userSettings myvars; };
+	specialArgs = { inherit systemSettings userSettings vars; };
 
 	modules = [ 
 	
@@ -70,14 +70,13 @@ in {
       { 
         inherit systemSettings userSettings; 
         inherit inputs; # Pass inputs if needed in home.nix
-        myvars = vars;
+        inherit vars;
       };
 
       modules = [
         
         # Home-manager module
-        ./home.nix
-
+        ./home.nix          
         #...
       ];
     };

@@ -7,6 +7,7 @@
   ./utils.nix
   ./diff.nix
   ./ui.nix
+  ./sign.nix
   
   ];
 

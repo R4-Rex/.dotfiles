@@ -1,12 +1,10 @@
-{config, pkgs, ...}:
+{config, pkgs, vars, ...}:
 {
     programs.git = {
       
-      gnupg = {
       signing = {
-        key = builtins.readFiles config.sops.secrets.fingerprint.path;
+        key = vars.gpg.fingerprint;
         signByDefault = true;
-      };
       };
     };
 }

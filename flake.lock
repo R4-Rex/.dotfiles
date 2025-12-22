@@ -23,14 +23,17 @@
     },
     "myvars": {
       "locked": {
-        "lastModified": 1766330620,
-        "narHash": "sha256-JHZhIopYklP3+81wWU9O8V4AbbrOGDN/+1FR5yaQIro=",
-        "path": "/home/rex/.vars",
-        "type": "path"
+        "lastModified": 1766330554,
+        "narHash": "sha256-P1NyLeqZgA3ejVwx0LZirZVgyxq+136JPEmDVMN0gwE=",
+        "ref": "refs/heads/master",
+        "rev": "a837094a859551248656f15eaed6d7b51d24ac8f",
+        "revCount": 2,
+        "type": "git",
+        "url": "file:///home/rex/.vars"
       },
       "original": {
-        "path": "/home/rex/.vars",
-        "type": "path"
+        "type": "git",
+        "url": "file:///home/rex/.vars"
       }
     },
     "nixpkgs": {

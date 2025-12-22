@@ -6,6 +6,7 @@ let
     ".." = "cd ..";
     la = "ls -la";
     "..." = "cd ../..";
+    "hm" = "home-manager";
   };
 in
 {

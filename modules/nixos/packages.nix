@@ -17,13 +17,11 @@
   
   git
   
-  # Browser
-  librewolf
-  firefox
-  tor-browser
-  
   # Discord
   vesktop
+  
+  # Backup Browser
+  firefox
 
   ];
 }

@@ -23,9 +23,9 @@
 
     ./clipboard.nix
 
-    # Librewolf Config
-    ./librewolf/librewolf.nix
+    # Browsers
 
-    ./brave.nix
+    ./browsers/default.nix
+
   ];
 }

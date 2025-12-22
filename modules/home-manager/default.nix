@@ -24,8 +24,9 @@
     ./clipboard.nix
 
     # Browsers
-
     ./browsers/default.nix
-
+    
+    # Discord
+    ./discord.nix
   ];
 }

@@ -16,10 +16,7 @@
   libnotify
   
   git
-  
-  # Discord
-  vesktop
-  
+
   # Backup Browser
   firefox
 

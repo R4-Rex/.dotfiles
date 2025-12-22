@@ -25,5 +25,7 @@
 
     # Librewolf Config
     ./librewolf/librewolf.nix
+
+    ./brave.nix
   ];
 }

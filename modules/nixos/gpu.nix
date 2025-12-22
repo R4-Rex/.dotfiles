@@ -23,4 +23,9 @@
     ];
   };
 
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "radeonsi";
+    MOZ_DISABLE_RDD_SANDBOX = "1";
+  };
+
 }

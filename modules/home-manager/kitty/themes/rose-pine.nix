@@ -35,7 +35,7 @@ programs.kitty = {
     color9 = "#eb6f92";
 
     # green
-    color2 = "#31748f";
+    color2 = "#27C23E";
     color10 = "#31748f";
 
     # yellow

@@ -27,7 +27,7 @@
   let
     systemSettings = {
       system = "x86_64-linux";
-      hostname = "nixos";
+      hostname = "potato";
       locale = "en_US.UTF-8";
     };
     
@@ -36,33 +36,48 @@
       term = "kitty";
       editor = "neovim";
     };
-
+    
     vars = myvars.secrets;
 
     lib = nixpkgs.lib;
     system = systemSettings.system;
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+    
+    # Defines the System
+    potatoSystem = lib.nixosSystem {
+     
+     inherit system;
+
+     specialArgs = { inherit systemSettings userSettings vars; };
+
+     modules = [ 
+	
+       ./nixos/configuration.nix
+	
+     ];
+    };
+
 
 in {
 
     #  NIXOS SYSTEM CONFIGURATION
-    # Command: sudo nixos-rebuild switch --flake .
+    # Command: sudo nixos-rebuild switch --flake . Or .#potato
     
-    nixosConfigurations.nixos = lib.nixosSystem {
+    nixosConfigurations = {
 
-    	inherit system;
+    "${systemSettings.hostname}" = potatoSystem; # normally entire thing was here, but I made it cleaner :))
+    
+    # Make potato the default for everything :))
+    default = potatoSystem;
+    
+    # Normally the rebuild commmand looks for 'nixos' instead of the 'deafult' I defined above
+    # So.. I point the system in the right direction :))
 
-	specialArgs = { inherit systemSettings userSettings vars; };
+	  nixos = potatoSystem; # this is also potato :))
 
-	modules = [ 
-	
-	  ./nixos/configuration.nix
-	
-	];
-       };
-	
-	# STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED) 
-	# Command: home-manager switch --flake #user
+};
+    # STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED) 
+	  # Command: home-manager switch --flake #user
 
      homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration 
     {

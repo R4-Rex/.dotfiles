@@ -44,7 +44,7 @@
     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
     
     # Defines the System
-    potatoSystem = lib.nixosSystem {
+    potato = lib.nixosSystem {
      
      inherit system;
 
@@ -65,15 +65,15 @@ in {
     
     nixosConfigurations = {
 
-    "${systemSettings.hostname}" = potatoSystem; # normally entire thing was here, but I made it cleaner :))
+    "${systemSettings.hostname}" = potato; # normally entire thing was here, but I made it cleaner :))
     
     # Make potato the default for everything :))
-    default = potatoSystem;
+    default = potato;
     
     # Normally the rebuild commmand looks for 'nixos' instead of the 'deafult' I defined above
     # So.. I point the system in the right direction :))
 
-	  nixos = potatoSystem; # this is also potato :))
+	  nixos = potato; # this is also potato, just in case :))
 
 };
     # STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED) 

@@ -41,7 +41,7 @@
 
     lib = nixpkgs.lib;
     system = systemSettings.system;
-    pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+    pkgs = nixpkgs.legacyPackages.system;
     
     # Defines the System
     potato = lib.nixosSystem {

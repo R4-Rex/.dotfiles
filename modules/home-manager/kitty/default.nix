@@ -1,8 +1,10 @@
 {
 imports = [
 
-    ./fonts.nix
     ./kitty.nix
 
+    ./fonts.nix
+    
+    ./themes/rose-pine.nix
 ];
 }

@@ -70,7 +70,7 @@ in {
     # Make potato the default for everything :))
     default = potato;
     
-    # Normally the rebuild commmand looks for 'nixos' instead of the 'deafult' I defined above
+    # Normally the rebuild commmand looks for 'nixos' instead of the 'default' I defined above
     # So.. I point the system in the right direction :))
 
 	  nixos = potato; # this is also potato, just in case :))

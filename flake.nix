@@ -16,7 +16,7 @@
     # My Vars!
     myvars = {
 
-      url = "git+file:///home/rex/.vars";
+      url = "path:///home/rex/.vars";
 
     };
     

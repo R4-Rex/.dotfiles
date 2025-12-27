@@ -66,7 +66,7 @@
     command_execution_time    # previous command duration
     virtualenv                # python virtual environment
     context                   # user@host
-    time                      # current time
+    # time                    # current time
     # =========================[ Line #2 ]=========================
     newline                   # \n
   )
@@ -108,8 +108,8 @@
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
   # Context format when not root: user@host. The whole thing grey.
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
-  # Don't show context unless root or in SSH.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
+  # Don't show context unless root or in SSH. (overrides the above 2 options)
+  # typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION="%n@%m"
 
   # Show previous command duration only if it's >= 5s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=5

@@ -22,9 +22,4 @@
     git-crypt
   ];
 
-  programs.git.settings = {
-    # Use delta for diff if available
-    core.pager = "${pkgs.delta}/bin/delta";
-    interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
-  };
 }

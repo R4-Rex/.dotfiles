@@ -43,6 +43,12 @@ zinit snippet OMZ::lib/compfix.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# This has caused me an entire days worth of headaches
+# This is important to use if I am not using oh-my-zsh
+# cuz otherwise I cant scroll with my mouse
+export LESS=-R # display colored text properly instead of raw escape codes
+export PAGER=less # sets $PAGER value
+
 # History configuration
 HISTSIZE=10000
 SAVEHIST=10000

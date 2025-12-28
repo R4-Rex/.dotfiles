@@ -1,7 +1,9 @@
 {config, pkgs, ...}:
 
 {
-  programs.git.settings = {
+  programs = {
+
+    git.settings = {
     # Colors everywhere
     color.ui = "auto";
     
@@ -26,21 +28,27 @@
     # Pretty format for various commands
     pretty.default = "%C(yellow)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset";
     
-    # Delta configuration (syntax-highlighting pager)
+    # Interactive rebase UI
+    rebase.autoSquash = true;
+    rebase.autoStash = true;
+    
+    core.pager = "${pkgs.delta}/bin/delta";
+
     delta = {
+      
       features = "side-by-side line-numbers decorations";
+      
       syntax-theme = "Dracula";
       plus-style = "syntax #012800";
       minus-style = "syntax #340001";
+      
       decorations = {
         commit-decoration-style = "bold yellow box ul";
         file-style = "bold yellow ul";
         file-decoration-style = "none";
+
+        };
       };
     };
-    
-    # Interactive rebase UI
-    rebase.autoSquash = true;
-    rebase.autoStash = true;
   };
 }

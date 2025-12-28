@@ -1,4 +1,6 @@
-
+if [[ -n "$ZSH_DEBUGRC" ]]; then
+  zmodload zsh/zprof
+fi
 # P10k instant prompt
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -31,14 +33,17 @@ zinit light romkatv/powerlevel10k
 zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 
+zinit ice wait lucid
 zinit light zsh-users/zsh-syntax-highlighting
 
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
-zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
-zinit snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
-zinit snippet OMZ::lib/completion.zsh
-zinit snippet OMZ::lib/compfix.zsh
+zinit wait lucid for \
+  OMZ::plugins/git/git.plugin.zsh \
+  OMZ::plugins/sudo/sudo.plugin.zsh \
+  OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+  OMZ::plugins/zoxide/zoxide.plugin.zsh \
+  OMZ::lib/completion.zsh \
+  OMZ::lib/compfix.zsh \
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -101,4 +106,6 @@ alias ...='cd ../..'
 alias hm='home-manager'
 alias la='ls -la'
 alias ll='ls -l'
-
+if [[ -n "$ZSH_DEBUGRC" ]]; then
+  zprof
+fi

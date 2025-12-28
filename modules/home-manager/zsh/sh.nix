@@ -23,6 +23,8 @@ in
       autocd = true;
       shellAliases = myAliases;
 
+
+
       oh-my-zsh = {
       enable = true;
       plugins = [ 
@@ -54,6 +56,9 @@ in
       SAVEHIST=1000
       setopt HIST_IGNORE_ALL_DUPS
       setopt HIST_SAVE_NO_DUPS
+
+      # Keybindings
+      bindkey '^H' backward-kill-word
     ''
     ];
     };

@@ -1,20 +1,10 @@
 {config, lib, ...}:
 
+# This creates a symbolic symlink at ~/.config/hypr pointing to a copy of
+# ~/.dotfiles/hypr in the Nix store.
+# Edits in .dotfiles/hypr take effect immediately in the config.
 {
- home.activation.setupHyprSymlink = config.lib.dag.entryAfter ["writeBoundary"] ''
-    echo "Setting up Hyprland config symlink..."
-
-    if [ -d "$HOME/.dotfiles/hypr" ] && [ ! -L "$HOME/.config/hypr" ]; 
-    then
-      ln -sfn "$HOME/.dotfiles/hypr" "$HOME/.config/hypr"
-
-      echo " Hyprland config symlink created"
-
-    elif [ -L "$HOME/.config/hypr" ]; then
-
-      echo " Hyprland symlink already exists"
-    else
-      echo " Hyprland dotfiles not found at $HOME/.dotfiles/hypr"
-    fi
-  '';
+  xdg.configFile."hypr/" = {
+  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/hypr/";
+  };
 }

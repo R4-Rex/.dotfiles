@@ -111,9 +111,12 @@ fi
 # Aliases
 alias ..='cd ..'
 alias ...='cd ../..'
-alias hm='home-manager'
 alias la='ls -la'
 alias ll='ls -l'
+
+alias hm='home-manager'
+alias ff='fastfetch'
+
 if [[ -n "$ZSH_DEBUGRC" ]]; then
   zprof
 fi

@@ -58,6 +58,8 @@ export PAGER=less # sets $PAGER value
 # Input Prompt
 export GPG_TTY=$(tty)
 
+export EDITOR="nvim"
+
 # History configuration
 HISTSIZE=10000
 SAVEHIST=10000

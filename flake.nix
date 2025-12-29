@@ -34,7 +34,7 @@
     userSettings = {
       username = "rex"; 
       term = "kitty";
-      editor = "neovim";
+      editor = "nvim";
     };
     
     vars = myvars.secrets;

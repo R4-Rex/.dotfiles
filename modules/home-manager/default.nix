@@ -5,28 +5,26 @@
     
     ./zsh/default.nix
 
-    ./cursors.nix
+    ./misc/cursors.nix
 
     ./git/git.nix
 
     ./neovim/nvim.nix
 
-    ./onefetch.nix
+    ./utils/onefetch.nix
 
     ./hypr/default.nix
    
-    ./theme.nix
+    ./misc/theme.nix
 
     ./rofi/default.nix
 
     ./kitty/default.nix
 
-    ./clipboard.nix
+    ./utils/clipboard.nix
 
-    # Browsers
     ./browsers/default.nix
     
-    # Discord
-    ./discord.nix
+    ./apps/discord.nix
   ];
 }

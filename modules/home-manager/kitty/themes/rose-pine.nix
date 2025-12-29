@@ -26,37 +26,36 @@ programs.kitty = {
     active_border_color = "#31748f";
     inactive_border_color = "#403d52";
 
-    # black
-    color0 = "#26233a";
-    color8 = "#6e6a86";
+    color0  = "#26233a";      # Overlay
+    color8  = "#6e6a86";      # Muted
 
-    # red
-    color1 = "#eb6f92";
-    color9 = "#eb6f92";
+    # Red (#eb5f92)
+    color1  = "#eb6f92";      # Love
+    color9  = "#eb6f92";      # Love
 
-    # green
-    color2 = "#27C23E";
-    color10 = "#31748f";
+    # Green (#6feb87)
+    color2  = "#6feb87";      # Foam 
+    color10 = "#6feb87";      # Foam
 
-    # yellow
-    color3 = "#f6c177";
-    color11 = "#f6c177";
+    # Yellow (#f6c177)
+    color3  = "#f6c177";      # Gold
+    color11 = "#f6c177";      # Gold
 
-    # blue
-    color4 = "#9ccfd8";
-    color12 = "#9ccfd8";
+    # Blue (#9ccfd8)
+    color4  = "#1072d2";      # Foam 
+    color12 = "#1072d2";      # Foam
 
-    # magenta
-    color5 = "#c4a7e7";
-    color13 = "#c4a7e7";
+    # Magenta (#c4a7e7)
+    color5  = "#c4a7e7";      # Iris
+    color13 = "#c4a7e7";      # Iris
 
-    # cyan
-    color6 = "#ebbcba";
-    color14 = "#ebbcba";
+    # Cyan (#ebbcba)
+    color6  = "#6ad3ec";      # Rose
+    color14 = "#6ad3ec";      # Rose
 
-    # white
-    color7 = "#e0def4";
-    color15 = "#e0def4";
+    # White (#e0def4)
+    color7  = "#e0def4";      # Text
+    color15 = "#e0def4";      # Text
   };
 };
 }

@@ -35,15 +35,13 @@ zinit light zsh-users/zsh-autosuggestions
 
 zinit ice wait lucid
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light Aloxaf/fzf-tab
 
 zinit wait lucid for \
   OMZ::plugins/git/git.plugin.zsh \
   OMZ::plugins/sudo/sudo.plugin.zsh \
   OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
-  OMZ::plugins/zoxide/zoxide.plugin.zsh \
-  OMZ::lib/completion.zsh \
-  OMZ::lib/compfix.zsh \
-
+  OMZ::plugins/zoxide/zoxide.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -61,6 +59,7 @@ export GPG_TTY=$(tty)
 export EDITOR="nvim"
 
 export DEFAULT_TARGET_DIR=~/Screenshots
+
 
 # History configuration
 HISTSIZE=10000

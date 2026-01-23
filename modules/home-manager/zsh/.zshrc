@@ -115,6 +115,7 @@ alias ll='ls -l'
 
 alias hm='home-manager'
 alias ff='fastfetch'
+alias of='onefetch'
 
 if [[ -n "$ZSH_DEBUGRC" ]]; then
   zprof

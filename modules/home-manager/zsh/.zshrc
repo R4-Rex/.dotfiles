@@ -124,8 +124,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias el='eza'
-alias ll='eza -l --header --icons'
-alias la='eza -la --header --icons'
+alias ll='eza -l --header --icons --group-directories-first --time-style=long-iso'
+alias la='eza -la --header --icons --group-directories-first --time-style=long-iso'
 alias tree='eza --tree --icons'
 
 alias hm='home-manager'

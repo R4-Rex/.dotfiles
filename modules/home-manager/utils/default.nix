@@ -6,6 +6,7 @@
     ./grim.nix
     ./fastfetch.nix
     ./fzf.nix
+    ./eza.nix
 
   ];
 }

@@ -2,7 +2,7 @@
   imports = [
     
     ./discord.nix
-    ./yazi.nix
+    ./yazi/yazi.nix
 
   ];
 }

@@ -2,7 +2,7 @@
   imports = [
     
     ./discord.nix
-    ./lf.nix
+    ./yazi.nix
 
   ];
 }

@@ -2,14 +2,15 @@
 {
   # File Manager
 
-  programs.lf = {
+  programs.yazi = {
     
     enable = true;
 
+    enableZshIntegration = true;
+
     settings = {
-      
-      hidden = true;
 
     };
+    
   };
 }

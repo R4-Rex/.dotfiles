@@ -68,21 +68,23 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 mkdir -p "$(dirname "$HISTFILE")"
 
+# ZSH options for better experience
+setopt NO_BEEP
+setopt NO_LIST_BEEP
+
 setopt HIST_FCNTL_LOCK
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
+setopt INTERACTIVE_COMMENTS
 setopt autocd
+
 unsetopt APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 unsetopt HIST_EXPIRE_DUPS_FIRST
 unsetopt HIST_FIND_NO_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_SAVE_NO_DUPS
-
-# ZSH options for better experience
-setopt NO_BEEP
-setopt NO_LIST_BEEP
 
 # ===== KEYBINDINGS =====
 # Navigation

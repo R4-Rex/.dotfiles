@@ -126,6 +126,7 @@ alias ...='cd ../..'
 alias el='eza'
 alias ll='eza -l --header --icons'
 alias la='eza -la --header --icons'
+alias tree='eza --tree --icons'
 
 alias hm='home-manager'
 alias ff='fastfetch'

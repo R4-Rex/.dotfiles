@@ -122,8 +122,10 @@ fi
 # Aliases
 alias ..='cd ..'
 alias ...='cd ../..'
-alias la='ls -la'
-alias ll='ls -l'
+
+alias el='eza'
+alias ll='eza -l --header --icons'
+alias la='eza -la --header --icons'
 
 alias hm='home-manager'
 alias ff='fastfetch'

@@ -60,6 +60,7 @@ export EDITOR="nvim"
 
 export DEFAULT_TARGET_DIR=~/Screenshots
 
+WORDCHARS="${WORDCHARS//\/}" # stops cursor at /
 
 # History configuration
 HISTSIZE=10000

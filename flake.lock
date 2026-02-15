@@ -177,11 +177,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1771144256,
-        "narHash": "sha256-Rpk8yvADpq8BApq3xNpUTdqqdvgWdVkDaEV2uCfDS2k=",
+        "lastModified": 1771147776,
+        "narHash": "sha256-o6skOD9RiNRz1vBtNcuu/2C7a3GvdmjtSD1u2FfBu7c=",
         "owner": "R4-Rex",
         "repo": "nix-kickstarter",
-        "rev": "e619db98e14095b3bb4a6bc9891cf839ae14df30",
+        "rev": "880b5caccae9dfcd95bdcb9bdaf7e954ea32fc2e",
         "type": "github"
       },
       "original": {

@@ -12,7 +12,11 @@
     url = "github:nix-community/home-manager/release-25.11";
     inputs.nixpkgs.follows = "nixpkgs"; # makes sure both nixpkgs reference is the same
     };
-    
+
+    neonix = {
+    url = "github:R4-Rex/nix-kickstarter";
+    };
+
     # My Vars!
     myvars = {
 
@@ -22,7 +26,7 @@
     
   };
 
-  outputs = { self, nixpkgs, home-manager, myvars, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, myvars, neonix, ... } @inputs:
 
   let
     systemSettings = {
@@ -88,6 +92,7 @@ in {
         inherit systemSettings userSettings; 
         inherit inputs; # Pass inputs if needed in home.nix
         inherit vars;
+	inherit neonix;
       };
 
       modules = [

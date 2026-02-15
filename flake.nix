@@ -45,7 +45,7 @@
 
     lib = nixpkgs.lib;
     system = systemSettings.system;
-    pkgs = nixpkgs.legacyPackages.system;
+    pkgs = nixpkgs.legacyPackages.${system};
     
     # Defines the System
     potato = lib.nixosSystem {
@@ -74,7 +74,7 @@ in {
     # Make potato the default for everything :))
     default = potato;
     
-    # Normally the rebuild commmand looks for 'nixos' instead of the 'default' I defined above
+    # Normally the rebuild command looks for 'nixos' instead of the 'default' I defined above
     # So.. I point the system in the right direction :))
 
 	  nixos = potato; # this is also potato, just in case :))
@@ -85,7 +85,7 @@ in {
 
      homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration 
     {
-      pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+      pkgs = pkgs;
 
       extraSpecialArgs = 
       { 

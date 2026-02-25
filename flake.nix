@@ -14,7 +14,7 @@
     };
 
     neonix = {
-    url = "github:R4-Rex/nix-kickstarter";
+    url = "github:R4-Rex/neonix-wrapper";
     };
 
     # My Vars!

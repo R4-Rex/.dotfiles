@@ -7,6 +7,6 @@
     ./fastfetch/fastfetch.nix
     ./fzf.nix
     ./eza.nix
-
+    ./gnupg.nix
   ];
 }

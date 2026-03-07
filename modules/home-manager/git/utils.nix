@@ -5,7 +5,6 @@
 
     delta
 
-    gnupg
     git-crypt
 
   ];

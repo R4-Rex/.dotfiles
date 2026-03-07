@@ -2,31 +2,14 @@
 
 {
   home.packages = with pkgs; [
-    diff-so-fancy          # Better diff output
-    meld                   # GUI diff/merge tool
   ];
 
   programs.git.settings = {
-    # Use diff-so-fancy for better diffs
     core.attributesfile = "~/.gitattributes";
     
     # Diff configuration
     diff.algorithm = "histogram";
     diff.indentHeuristic = true;
-    diff.tool = "meld";
-    
-    # Merge configuration
-    merge.tool = "meld";
-    merge.conflictstyle = "zdiff3";
-    
-    # Difftool configuration
-    difftool.prompt = false;
-    difftool.meld.cmd = "meld $LOCAL $REMOTE";
-    
-    # Mergetool configuration
-    mergetool.prompt = false;
-    mergetool.keepBackup = false;
-    mergetool.meld.cmd = "meld $LOCAL $BASE $REMOTE --output $MERGED";
   };
 
   # Git attributes for better diffing

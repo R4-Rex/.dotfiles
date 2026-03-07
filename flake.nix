@@ -98,7 +98,7 @@ in {
       modules = [
         
         # Home-manager module
-        ./home.nix          
+        ./home.nix
         #...
       ];
     };

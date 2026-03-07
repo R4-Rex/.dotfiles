@@ -43,13 +43,13 @@
       "locked": {
         "lastModified": 1772857937,
         "narHash": "sha256-GdtGELrEasHb1vxxnMiaqdr9hhrYX56/kPR3f8dw07U=",
-        "owner": "R4-Rex",
+        "owner": "Rex-Prime",
         "repo": "neonix-wrapper",
         "rev": "7e8aebf18942204c7a1aa20626472f863ed69b51",
         "type": "github"
       },
       "original": {
-        "owner": "R4-Rex",
+        "owner": "Rex-Prime",
         "repo": "neonix-wrapper",
         "type": "github"
       }

@@ -14,7 +14,7 @@
     };
 
     neonix = {
-    url = "github:R4-Rex/neonix-wrapper";
+    url = "github:Rex-Prime/neonix-wrapper";
     };
 
     # My Vars!

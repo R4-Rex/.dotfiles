@@ -1,6 +1,6 @@
 { pkgs, neonix, ... }:
 {
   home.packages = [
-    neonix.packages.${pkgs.system}.default
+    neonix.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

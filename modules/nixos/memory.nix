@@ -4,8 +4,9 @@
   # zram - Compressed RAM (more efficient than swap)
   zramSwap = {
     enable = true;
-    memoryPercent = 25;  # 2GB of 8GB for zram
-    algorithm = "zstd"; 
+    memoryPercent = 50;  # 4GB of 8GB for zram
+    algorithm = "zstd";
+    priority = 100;
   };
 
 # Kernel memory parameters
@@ -23,6 +24,7 @@
   {
     device = "/swapfile";
     size = 8 * 1024; # 8GB swap
+    priority = 50;
   }
   ];
 

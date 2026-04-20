@@ -25,6 +25,14 @@ config = {
         ),
         color_scheme = 'rose-pine-moon',
         color_scheme_dirs = {'./colors/'},
+
+        keys = {
+                {
+                        key = "F11",
+                        mods = "CTRL|SHIFT",
+                        action = wezterm.action.ToggleFullScreen,
+                },
+        }
 }
 -- Finally, return the configuration to wezterm:
 return config

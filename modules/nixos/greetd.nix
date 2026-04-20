@@ -3,7 +3,7 @@
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
-
+#  x11-sessions = "/run/current-system/sw/share/xsessions";
 
 in {
   services.greetd = {
@@ -23,8 +23,14 @@ in {
       command = "hyprland";
       user = "${userSettings.username}";
 
-      }; */
+      };
+*/
+/*
+  use this flag when using xsession
 
+  --xsessions ${x11-sessions}
+
+*/
       default_session = {
         command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --window-padding 2";
         user = "greeter";

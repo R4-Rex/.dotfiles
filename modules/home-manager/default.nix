@@ -13,6 +13,8 @@
 
     ./kitty/default.nix
 
+    ./wezterm/wezterm.nix
+
     ./browsers/default.nix
     
     ./utils/default.nix

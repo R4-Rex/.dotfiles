@@ -101,11 +101,23 @@ config = {
         use_fancy_tab_bar = false,
         hide_tab_bar_if_only_one_tab = true,
         tab_bar_at_bottom = true,
-
         -- or, changing the font size and color scheme.
         font_size = 14,
+        --[[harfbuzz_features = {
+                'calt=1',
+                'liga=1',
+                'clig=1',
+                'ss01=1',
+                'ss02=1',
+                'ss03=1',
+                'ss04=1',
+                'ss05=1',
+                'ss06=1',
+                'ss07=1',
+                'ss08=1'
+        },]]--
         font = wezterm.font (
-                'JetBrainsMonoNL Nerd Font Mono',
+                'JetBrainsMono Nerd Font Mono',
                 {
                         weight="Regular",
                         stretch="Normal",

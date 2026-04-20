@@ -12,7 +12,7 @@
 
   ./fonts.nix
 
-  ./hyprland.nix
+  ./wm/hyprland.nix
   
   ./xdg-portals.nix
 

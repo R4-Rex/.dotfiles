@@ -1,31 +1,38 @@
 [colors]
 ansi = [
-    "#393552",
+    "#26233a",
     "#eb6f92",
-    "#9ccfd8",
+    "#6feb87",
     "#f6c177",
-    "#3e8fb0",
+    "#1072d2",
     "#c4a7e7",
-    "#ea9a97",
+    "#6ad3ec",
     "#e0def4",
 ]
-background = "#232136"
+background = "#191724"
 brights = [
     "#6e6a86",
     "#eb6f92",
-    "#9ccfd8",
+    "#6feb87",
     "#f6c177",
-    "#3e8fb0",
+    "#1072d2",
     "#c4a7e7",
-    "#ea9a97",
+    "#6ad3ec",
     "#e0def4",
 ]
-cursor_bg = "#e0def4"
-cursor_border = "#e0def4"
-cursor_fg = "#232136"
+cursor_bg = "#524f67"
+cursor_border = "#524f67"
+cursor_fg = "#e0def4"
 foreground = "#e0def4"
-selection_bg = "#232136"
+selection_bg = "#403d52"
 selection_fg = "#e0def4"
+active_border_color = "#31748f"
+active_tab_background = "#26233a"
+active_tab_foreground = "#e0def4"
+inactive_border_color = "#403d52"
+inactive_tab_background = "#191724"
+inactive_tab_foreground = "#6e6a86"
+url_color = "#c4a7e7"
 
 [colors.indexed]
 # Add indexed colors here if needed, e.g.:
@@ -35,4 +42,3 @@ selection_fg = "#e0def4"
 [metadata]
 name = "rose-pine-moon"
 origin_url = "https://github.com/mbadolato/iTerm2-Color-Schemes"
-wezterm_version = "20230320-124340-559cb7b0"

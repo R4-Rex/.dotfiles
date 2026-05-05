@@ -4,6 +4,59 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config = {
+        initial_cols = 128,
+        initial_rows = 32,
+
+        window_padding = { left = 4, right = 0, top = 0, bottom = 0 },
+
+        enable_tab_bar = true,
+        use_fancy_tab_bar = false,
+        hide_tab_bar_if_only_one_tab = true,
+        tab_bar_at_bottom = true,
+        -- or, changing the font size and color scheme.
+        font_size = 14,
+        --[[harfbuzz_features = {
+                'calt=1',
+                'liga=1',
+                'clig=1',
+                'ss01=1',
+                'ss02=1',
+                'ss03=1',
+                'ss04=1',
+                'ss05=1',
+                'ss06=1',
+                'ss07=1',
+                'ss08=1'
+        },]]--
+        font = wezterm.font (
+                'JetBrainsMono Nerd Font Mono',
+                {
+                        weight="Regular",
+                        stretch="Normal",
+                        style="Normal"
+                }
+        ),
+        color_scheme = 'rose-pine-moon',
+        color_scheme_dirs = {'./colors/'},
+
+        keys = {
+                {
+                        key = "F11",
+                        mods = "CTRL|SHIFT",
+                        action = wezterm.action.ToggleFullScreen,
+                },
+        },
+        mouse_bindings = {
+                -- Ctrl-click will open the link under the mouse cursor
+                {
+                        event = { Up = { streak = 1, button = "Left" } },
+                        mods = "CTRL",
+                        action = wezterm.action.OpenLinkAtMouseCursor,
+                },
+        },
+}
+
 local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 bar.apply_to_config(config,
         {
@@ -88,60 +141,5 @@ bar.apply_to_config(config,
                 },
         })
 
--- This is where you actually apply your config choices.
-
--- For example, changing the initial geometry for new windows:
-config = {
-        initial_cols = 128,
-        initial_rows = 32,
-
-        window_padding = { left = 4, right = 0, top = 0, bottom = 0 },
-
-        enable_tab_bar = true,
-        use_fancy_tab_bar = false,
-        hide_tab_bar_if_only_one_tab = true,
-        tab_bar_at_bottom = true,
-        -- or, changing the font size and color scheme.
-        font_size = 14,
-        --[[harfbuzz_features = {
-                'calt=1',
-                'liga=1',
-                'clig=1',
-                'ss01=1',
-                'ss02=1',
-                'ss03=1',
-                'ss04=1',
-                'ss05=1',
-                'ss06=1',
-                'ss07=1',
-                'ss08=1'
-        },]]--
-        font = wezterm.font (
-                'JetBrainsMono Nerd Font Mono',
-                {
-                        weight="Regular",
-                        stretch="Normal",
-                        style="Normal"
-                }
-        ),
-        color_scheme = 'rose-pine-moon',
-        color_scheme_dirs = {'./colors/'},
-
-        keys = {
-                {
-                        key = "F11",
-                        mods = "CTRL|SHIFT",
-                        action = wezterm.action.ToggleFullScreen,
-                },
-        },
-        mouse_bindings = {
-                -- Ctrl-click will open the link under the mouse cursor
-                {
-                        event = { Up = { streak = 1, button = "Left" } },
-                        mods = "CTRL",
-                        action = wezterm.action.OpenLinkAtMouseCursor,
-                },
-        },
-}
 -- Finally, return the configuration to wezterm:
 return config

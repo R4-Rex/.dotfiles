@@ -43,6 +43,8 @@ zinit wait lucid for \
   OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
   OMZ::plugins/zoxide/zoxide.plugin.zsh
 
+zinit snippet 'https://raw.githubusercontent.com/wezterm/wezterm/refs/heads/main/assets/shell-integration/wezterm.sh'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

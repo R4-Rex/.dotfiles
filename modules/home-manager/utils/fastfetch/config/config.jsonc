@@ -84,7 +84,7 @@
     {
     "type": "memory",
       "key": "    RAM          ",
-      "keyColor": "italic_green",
+      "keyColor": "green",
     },
     {
     "type": "swap",

@@ -1,46 +1,134 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    /* {
+        "type": "colors",
+        "symbol": "circle",
+    },*/
     "break",
-    //"colors"
     {
+      "type": "title",
+      "format": "                                {6}{7}{8}",
+      "color": {
+      "user": "cyan",
+      "host": "blue",
+      }
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────────────────────────────────────────────┐" // `\u001b` is `\033`, or `\e`
+      //"format": "                                    ",
+    },
+    "break",
+    {
+      "type": "os",
+      "key": "    OS           ",
+      "keyColor": "blue",
+    },
+    {
+    "type": "host",
+      "key": "    Machine      ",
+      "keyColor": "cyan",
+    },
+    {
+    "type": "kernel",
+      "key": "    Kernel       ",
+      "keyColor": "green",
+    },
+    {
+    "type": "packages",
+      "key": "    Packages     ",
+      "keyColor": "magenta",
+    },
+    {
+    "type": "uptime",
+      "key": "    Uptime       ",
+      "keyColor": "red",
+    },
+    {
+    "type": "shell",
+      "key": "    Shell        ",
+      "keyColor": "dim_green",
+    },
+    {
+    "type": "de",
+      "key": "    DE           ",
+      "keyColor": "dim_cyan",
+    },
+    {
+    "type": "wm",
+      "key": "    WM           ",
+      "keyColor": "bright_cyan",
+    },
+    //"wmtheme",
+    //"theme",
+    //"icons",
+    //"font",
+    {
+    "type": "terminal",
+      "key": "    Terminal     ",
+      "keyColor": "bright_magenta",
+    },
+    "break",
+    {
+    "type": "cpu",
+      "key": "    CPU          ",
+      "keyColor": "bright_cyan",
+    },
+    {
+    "type": "gpu",
+      "key": "    GPU          ",
+      "keyColor": "bright_red",
+    },
+    {
+    "type": "memory",
+      "key": "    RAM          ",
+      "keyColor": "italic_green",
+    },
+    {
+    "type": "swap",
+      "key": "    Swp          ",
+      "keyColor": "bright_magenta",
+    },
+    {
+    "type": "disk",
+      "key": "    Disk         ",
+      "keyColor": "blue",
+    },
+    {
+    "type": "localip",
+      "key": "    IP           ",
+      "keyColor": "magenta",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────────────────────────────┘", // `\u001b` is `\033`, or `\e`
+    },
+
+    //"colors"
+    /*{
       "type": "colors",
       "symbol": "circle",
-    }
+    }*/
+    {
+      "type": "custom",
+      "format": "                         \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+    },
   ],
-    "logo": {
-      
-      "height" : 20,
-      "width" : 40,
-    
-      "type" : "kitty-direct", // "kitty" also works
-      "source" : "~/.config/fastfetch/nixos.png",
-},
+  "display": {
+    "separator": "➜   "
+  },
+  "logo": {
+
+    "height" : 20,
+    "width" : 40,
+    "padding": {
+    "right" : 2,
+      "top" : 2,
+    },
+    "type" : "kitty-direct", // "kitty" also works
+    "source" : "~/.config/fastfetch/nixos.png",
+  },
 }

@@ -29,14 +29,12 @@ config = {
                 'ss07=1',
                 'ss08=1'
         },]]--
-        font = wezterm.font (
-                'JetBrainsMonoNF-Regular',
-                {
-                        weight="Regular",
-                        stretch="Normal",
-                        style="Normal"
-                }
-        ),
+        font = wezterm.font ( "JetBrainsMono Nerd Font", {
+ 
+                weight="Medium",
+                stretch="Normal",
+                style="Normal",
+        }),
         color_scheme = 'rose-pine-moon',
         color_scheme_dirs = {'./colors/'},
 

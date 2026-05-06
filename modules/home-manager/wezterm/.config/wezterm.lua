@@ -30,7 +30,7 @@ config = {
                 'ss08=1'
         },]]--
         font = wezterm.font (
-                'JetBrainsMono Nerd Font Mono',
+                'JetBrainsMonoNF-Regular',
                 {
                         weight="Regular",
                         stretch="Normal",

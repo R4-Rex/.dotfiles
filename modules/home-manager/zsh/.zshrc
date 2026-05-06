@@ -132,6 +132,11 @@ alias hm='home-manager'
 alias ff='fastfetch'
 alias of='onefetch'
 
+alias ngc='sudo nix-collect-garbage -d'
+alias ngcc='sudo nix-collect-garbage --delete-older-than 7d'
+alias nsweep='sudo nix-store --gc && sudo nix-collect-garbage -d'
+alias nvm='nix-collect-garbage -d && nix-store --optimize'
+
 if [[ -n "$ZSH_DEBUGRC" ]]; then
   zprof
 fi

@@ -14,6 +14,7 @@ config = {
         use_fancy_tab_bar = false,
         hide_tab_bar_if_only_one_tab = true,
         tab_bar_at_bottom = true,
+        enable_scroll_bar = true,
         -- or, changing the font size and color scheme.
         font_size = 14,
         --[[harfbuzz_features = {

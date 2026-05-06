@@ -54,6 +54,16 @@ config = {
                         mods = "CTRL|SHIFT",
                         action = wezterm.action.ActivateTabRelative(-1),
                 },
+                {
+                        key = ">",
+                        mods = "CTRL|SHIFT",
+                        action = wezterm.action.MoveTabRelative(1),
+                },
+                {
+                        key = "<",
+                        mods = "CTRL|SHIFT",
+                        action = wezterm.action.MoveTabRelative(-1),
+                },
         },
         mouse_bindings = {
                 -- Ctrl-click will open the link under the mouse cursor

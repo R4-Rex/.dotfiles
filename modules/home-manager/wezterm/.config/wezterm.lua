@@ -44,6 +44,16 @@ config = {
                         mods = "CTRL|SHIFT",
                         action = wezterm.action.ToggleFullScreen,
                 },
+                {
+                        key = "RightArrow",
+                        mods = "CTRL|SHIFT",
+                        action = wezterm.action.ActivateTabRelative(1),
+                },
+                {
+                        key = "LeftArrow",
+                        mods = "CTRL|SHIFT",
+                        action = wezterm.action.ActivateTabRelative(-1),
+                },
         },
         mouse_bindings = {
                 -- Ctrl-click will open the link under the mouse cursor

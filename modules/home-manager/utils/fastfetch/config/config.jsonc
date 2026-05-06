@@ -61,6 +61,11 @@
     //"icons",
     //"font",
     {
+      "type": "terminalfont",
+      "key": "    Font         ",
+      "keyColor": "cyan",
+    },
+    {
     "type": "terminal",
       "key": "    Terminal     ",
       "keyColor": "bright_magenta",

@@ -122,6 +122,7 @@ fi
 # Aliases
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias el='eza'
 alias ll='eza -l --header --icons --group-directories-first --time-style=long-iso'

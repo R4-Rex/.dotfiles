@@ -29,7 +29,11 @@
     "poweradapter",
     "locale",
     "break",
-    "colors"
+    //"colors"
+    {
+      "type": "colors",
+      "symbol": "circle",
+    }
   ],
     "logo": {
       

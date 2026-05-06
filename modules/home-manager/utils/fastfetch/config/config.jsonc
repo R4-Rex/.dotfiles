@@ -24,32 +24,32 @@
     {
       "type": "os",
       "key": "    OS           ",
-      "keyColor": "blue",
+      "keyColor": "red",
     },
     {
     "type": "host",
       "key": "    Machine      ",
-      "keyColor": "cyan",
+      "keyColor": "bright_red",
     },
     {
     "type": "kernel",
       "key": "    Kernel       ",
-      "keyColor": "green",
+      "keyColor": "yellow",
     },
     {
     "type": "packages",
       "key": "    Packages     ",
-      "keyColor": "magenta",
+      "keyColor": "green",
     },
     {
     "type": "shell",
       "key": "    Shell        ",
-      "keyColor": "dim_green",
+      "keyColor": "bright_green",
     },
     {
     "type": "de",
       "key": "    DE           ",
-      "keyColor": "dim_cyan",
+      "keyColor": "cyan",
     },
     {
     "type": "wm",
@@ -68,7 +68,7 @@
     {
     "type": "terminal",
       "key": "    Terminal     ",
-      "keyColor": "bright_magenta",
+      "keyColor": "bright_blue",
     },
     "break",
     {
@@ -79,7 +79,7 @@
     {
     "type": "gpu",
       "key": "    GPU          ",
-      "keyColor": "bright_red",
+      "keyColor": "bright_magenta",
     },
     {
     "type": "memory",
@@ -89,28 +89,28 @@
     {
     "type": "swap",
       "key": "    Swp          ",
-      "keyColor": "bright_magenta",
+      "keyColor": "bright_red",
     },
     {
     "type": "disk",
       "key": "    Disk         ",
-      "keyColor": "blue",
+      "keyColor": "red",
     },
     {
     "type": "localip",
       "key": "    IP           ",
-      "keyColor": "magenta",
+      "keyColor": "dim_magenta",
     },
     "break",
     {
     "type": "uptime",
       "key": "    Uptime       ",
-      "keyColor": "red",
+      "keyColor": "yellow",
     },
     {
       "type": "command",
       "key": "    Age          ",
-      "keyColor": "red",
+      "keyColor": "yellow",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     "break",

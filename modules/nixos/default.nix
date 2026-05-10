@@ -10,6 +10,8 @@
   
   ./packages.nix
 
+  ./sound.nix
+
   ./fonts.nix
 
   ./wm/hyprland.nix

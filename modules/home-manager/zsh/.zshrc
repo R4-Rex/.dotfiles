@@ -71,6 +71,12 @@ export EDITOR="nvim"
 
 export DEFAULT_TARGET_DIR=~/Screenshots
 
+# XDG setup
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 WORDCHARS="${WORDCHARS//\/}" # stops cursor at /
 
 # History configuration

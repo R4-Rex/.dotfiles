@@ -1,24 +1,22 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-  
-  wget
-  
-  kitty
 
-  waybar
+    wget
 
-  # Image Viewer
-  swayimg
-  
-  dunst
-  libnotify
-  
-  git
+    kitty
 
-  # Backup Browser
-  firefox
+    # Image Viewer
+    swayimg
+
+    dunst
+    libnotify
+
+    git
+
+    # Backup Browser
+    firefox
 
   ];
 }

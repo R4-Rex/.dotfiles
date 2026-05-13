@@ -1,0 +1,127 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "spacing": 0,
+  "margin-top": 8,
+  "margin-left": 4,
+  "margin-right": 12,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "group/tray-expander",
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock",
+    "custom/controlcenter",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3,],
+    },
+    "active-only": true,
+    "all-outputs": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "separate-outputs": true,
+    "rewrite": {
+      "": "Desktop",
+    },
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%A, %B %d}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<b>{}</b>",
+        "today": "<b><u>{}</u></b>",
+      },
+    },
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 6,
+    "show-passive-items": false,
+  },
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item",
+    },
+    "modules": ["custom/expand-icon", "tray"],
+  },
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false,
+    "on-scroll-up": "",
+    "on-scroll-down": "",
+    "on-scroll-left": "",
+    "on-scroll-right": "",
+  },
+
+  "wireplumber": {
+    "format": "{volume}%",
+    "format-icons": {
+      "0": "",
+      "1": "",
+      "50": "",
+    },
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}",
+    "format-charging": "󰂄",
+    "format-plugged": "󰚥",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{capacity}% · {timeTo}",
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+    "tooltip-format-ethernet": "Ethernet-Connected",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "",
+  },
+
+  "custom/controlcenter": {
+    "format": "󰂚",
+    "on-click": "dunstctl set-paused toggle",
+    "tooltip": false,
+  },
+}

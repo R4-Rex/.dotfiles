@@ -15,6 +15,8 @@
 
     ./wezterm/wezterm.nix
 
+    ./waybar/default.nix
+
     ./browsers/default.nix
     
     ./utils/default.nix

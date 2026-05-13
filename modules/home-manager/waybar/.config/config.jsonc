@@ -65,7 +65,7 @@
       "mode": "month",
       "format": {
         "months": "<b>{}</b>",
-        "today": "<b><u>{}</u></b>",
+        "today": "<b><u><span color='#e0af68'>{}</span></u></b>",
       },
     },
   },

@@ -45,6 +45,7 @@
         username = "rex";
         term = "kitty";
         editor = "nvim";
+        dotpath = "/home/${userSettings.username}/dotnix";
       };
 
       vars = myvars.secrets;

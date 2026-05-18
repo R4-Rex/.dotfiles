@@ -1,13 +1,17 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
 {
   home.packages = with pkgs; [
     wezterm
   ];
 
   xdg.configFile."wezterm/" = {
-  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/modules/home-manager/wezterm/.config/";
-  recursive = true;
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/wezterm/.config/";
+    recursive = true;
   };
 
 }
-

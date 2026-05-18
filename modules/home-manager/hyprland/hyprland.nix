@@ -5,6 +5,6 @@
 # Edits in .dotfiles/hypr take effect immediately in the config.
 {
   xdg.configFile."hypr/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/hypr/";
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/";
   };
 }

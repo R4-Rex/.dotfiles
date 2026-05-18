@@ -7,7 +7,7 @@
 
     ./neovim/nvim.nix
 
-    ./hypr/default.nix
+    ./hyprland/default.nix
    
     ./rofi/default.nix
 

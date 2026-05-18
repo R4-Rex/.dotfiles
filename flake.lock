@@ -41,11 +41,11 @@
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1778599440,
-        "narHash": "sha256-P6Tt7vlVx5VR8ybz/5nXUt4WNsJn6xVMepZJcVRIJ2U=",
+        "lastModified": 1778823133,
+        "narHash": "sha256-gvtLFvyIEJ+m4nLQkoyGEVszP9VT6phd8BA4wSMri7g=",
         "owner": "Rex-Prime",
         "repo": "neonix-wrapper",
-        "rev": "00da83aa2f8f5c76c2d7d3a8f33a9848a9112ad9",
+        "rev": "5863f453aca176d1bdd25cf8f9bf5128fcdad9f4",
         "type": "github"
       },
       "original": {

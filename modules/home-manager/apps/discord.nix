@@ -5,9 +5,9 @@
     settings = {
       discordBranch = "stable";
       arRPC = true;
-      hardwareVideoAcceleration = true;
+      hardwareAcceleration = false;
+      hardwareVideoAcceleration = false;
       enableSplashScreen = false;
-      hardwareAcceleration = true;
       customTitleBar = false;
       staticTitle = true;
       appBadge = false;

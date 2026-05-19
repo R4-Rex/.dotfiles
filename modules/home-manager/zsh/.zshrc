@@ -57,6 +57,19 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# fzf-tab customization
+
+source <(fzf --zsh) # Shell Integration
+
+zstyle ':fzf-tab:*' fzf-flags \
+--color='fg:4,fg+:4,bg+:0,hl:9,hl+:2,pointer:2,border:4,info:2' \
+--info=right \
+--border=none
+#--pointer="> " \
+#--prompt='❯ '
+
+#zstyle ':fzf-tab:complete:*'
+
 # EXPORTS!!
 
 # This has caused me an entire days worth of headaches

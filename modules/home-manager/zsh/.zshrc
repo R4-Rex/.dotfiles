@@ -62,7 +62,7 @@ function y() {
 source <(fzf --zsh) # Shell Integration
 
 zstyle ':fzf-tab:*' fzf-flags \
---color='fg:4,fg+:4,bg+:0,hl:9,hl+:2,pointer:2,border:4,info:2' \
+--color='fg:7,fg+:7,bg+:0,hl:9,hl+:2,pointer:2,border:4,info:2' \
 --info=right \
 --border=none
 #--pointer="> " \

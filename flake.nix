@@ -1,6 +1,22 @@
 {
   description = "My Fleks";
 
+  nixConfig = {
+    substituters = [
+      # Order Matters here...
+      # Official Cache
+      "https://cache.nixos.org"
+      # Hyprland Cachix
+      "https://hyprland.cachix.org"
+    ];
+    trusted-public-keys = [
+      # Official Key
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      # Hyprland Key
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
+
   inputs = {
 
     # Nix Packages!
@@ -11,7 +27,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs"; # makes sure both nixpkgs reference is the same
     };
-
+    # Hyprland!
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
     neonix = {
       url = "github:Rex-Prime/neonix-wrapper";
     };
@@ -59,11 +78,24 @@
 
         inherit system;
 
-        specialArgs = { inherit systemSettings userSettings vars; };
+        specialArgs = {
+          inherit
+            inputs
+            systemSettings
+            userSettings
+            vars
+            ;
+        };
 
         modules = [
 
           ./nixos/configuration.nix
+
+          {
+            # given the users in this list the right to specify additional substituters via:
+            #    1. `nixConfig.substituters` in `flake.nix`
+            nix.settings.trusted-users = [ "rex" ];
+          }
 
         ];
       };

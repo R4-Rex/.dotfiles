@@ -16,7 +16,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
   output = "VGA-1",
-  mode = "highres","auto",
+  mode = "modeline 72.00 1360 1408 1440 1520 768 771 781 790 -hsync +vsync",
   position = "0x0",
   scale = 1,
 })

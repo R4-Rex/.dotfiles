@@ -16,7 +16,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
   output = "VGA-1",
-  mode = "1360x786",
+  mode = "highres","auto",
   position = "0x0",
   scale = 1,
 })
@@ -86,7 +86,7 @@ hl.env("HYPRCURSOR_SIZE", "28")
 hl.config({
   general = {
     gaps_in = 5,
-    gaps_out = { top = 0, left=5, right=1, bottom=19  },
+    gaps_out = { top = 6, left=0, right=10, bottom=0  },
 
     border_size = 2,
 

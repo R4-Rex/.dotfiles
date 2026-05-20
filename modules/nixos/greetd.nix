@@ -1,38 +1,44 @@
-{pkgs,inputs, userSettings,...}:
+{
+  pkgs,
+  inputs,
+  userSettings,
+  ...
+}:
 
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
-#  x11-sessions = "/run/current-system/sw/share/xsessions";
+  startcommand = "start-hyprland";
+  #  x11-sessions = "/run/current-system/sw/share/xsessions";
 
-in {
+in
+{
   services.greetd = {
     enable = true;
     settings = {
 
-/*
-    Feature?
-    First boot: Uses initial_session (auto-login, no password)
+      /*
+          Feature?
+          First boot: Uses initial_session (auto-login, no password)
 
-    After logout: Uses default_session (shows greeter, requires password)
+          After logout: Uses default_session (shows greeter, requires password)
 
-    Subsequent boots: Uses default_session (always shows greeter)
+          Subsequent boots: Uses default_session (always shows greeter)
 
-      initial_session = {
+            initial_session = {
 
-      command = "hyprland";
-      user = "${userSettings.username}";
+            command = "hyprland";
+            user = "${userSettings.username}";
 
-      };
-*/
-/*
-  use this flag when using xsession
+            };
+      */
+      /*
+        use this flag when using xsession
 
-  --xsessions ${x11-sessions}
-
-*/
+        --xsessions ${x11-sessions}
+      */
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --window-padding 2";
+        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --cmd ${startcommand} --window-padding 2";
         user = "greeter";
       };
     };

@@ -1,7 +1,7 @@
 {
   imports = [
     
-    ./discord.nix
+    ./discord/discord.nix
     ./yazi/yazi.nix
 
   ];

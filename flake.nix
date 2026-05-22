@@ -31,6 +31,9 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+    # NixCord
+    nixcord.url = "github:FlameFlag/nixcord";
+
     neonix = {
       url = "github:Rex-Prime/neonix-wrapper";
     };

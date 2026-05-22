@@ -1,28 +1,30 @@
 {
   imports = [
-  ./gpu.nix
+    ./gpu.nix
 
-  ./htop.nix
-  
-  ./greetd.nix
-  
-  ./memory.nix
-  
-  ./packages.nix
+    ./htop.nix
 
-  ./sound.nix
+    ./greetd.nix
 
-  ./fonts.nix
+    ./memory.nix
 
-  ./wm/hyprland.nix
-  
-  ./xdg-portals.nix
+    ./packages.nix
 
-  ./security/default.nix
+    ./nix-tools.nix
 
-  # Compilers
+    ./sound.nix
 
-  ./compilers/default.nix
-  
+    ./fonts.nix
+
+    ./wm/hyprland.nix
+
+    ./xdg-portals.nix
+
+    ./security/default.nix
+
+    # Compilers
+
+    ./compilers/default.nix
+
   ];
 }

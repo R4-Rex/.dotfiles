@@ -1,5 +1,12 @@
 { inputs, pkgs, ... }:
 {
+
+  services.arrpc = {
+    enable = true;
+    package = pkgs.arrpc; # Default
+    systemdTarget = "default.target"; # Default
+  };
+
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
   programs.nixcord = {
@@ -123,7 +130,7 @@
         viewIcons.enable = true;
         voiceChatDoubleClick.enable = true;
         volumeBooster.enable = true;
-        #webRichPresence.enable = true; Web RPC doesnt work at the moment
+        webRichPresence.enable = true; # Web RPC doesnt work at the moment
         youtubeAdblock.enable = true;
       };
     };

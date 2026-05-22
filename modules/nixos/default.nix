@@ -22,6 +22,8 @@
 
     ./security/default.nix
 
+    ./arrpc.nix
+
     # Compilers
 
     ./compilers/default.nix

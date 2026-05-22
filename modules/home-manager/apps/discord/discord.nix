@@ -1,8 +1,5 @@
 { inputs, pkgs, ... }:
 {
-
-  home.packages = with pkgs; [ arrpc ]; # Maybe should download it system wide?
-
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
   programs.nixcord = {
@@ -24,12 +21,12 @@
     vesktopConfig = {
       hardwareAcceleration = false;
       arRPC = false;
-      enableSplashScreen =  false;
+      enableSplashScreen = false;
     };
     config = {
       useQuickCss = true;
       disableMinSize = true;
-      themes = {};
+      themes = { };
       themeLinks = [
         "https://raw.githubusercontent.com/UserPFP/UserPFP/main/userpfp.theme.css"
       ];

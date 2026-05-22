@@ -8,5 +8,6 @@
     ./fzf.nix
     ./eza.nix
     ./gnupg.nix
+    ./resoltuion.nix
   ];
 }

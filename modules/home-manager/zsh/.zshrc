@@ -116,21 +116,26 @@ unsetopt HIST_FIND_NO_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_SAVE_NO_DUPS
 
+bindkey -e
 # ===== KEYBINDINGS =====
+
+WORDCHARS=''
+
 # Navigation
 bindkey "^[[1;5C" forward-word      # Ctrl+Right
 bindkey "^[[1;5D" backward-word     # Ctrl+Left
+
 #bindkey "^[[H" beginning-of-line    # Home
 #bindkey "^[[F" end-of-line          # End
+
 # Editing
-bindkey '^H' backward-kill-word     # Ctrl+Backspace
-#bindkey '^[[3;5~' kill-word         # Ctrl+Delete
+
+bindkey "^H" backward-kill-word     # Ctrl+Backspace
 
 # Tab completion
 # bindkey '^I' complete-word          # Tab
 
 # Ensure emacs keybindings (disables vi-mode)
-bindkey -e
 
 # Kitty shell integration
 if test -n "$KITTY_INSTALLATION_DIR"; then

@@ -85,8 +85,8 @@ hl.env("HYPRCURSOR_SIZE", "28")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
   general = {
-    gaps_in = 5,
-    gaps_out = { top = 6, left=0, right=10, bottom=0  },
+    gaps_in = 1,
+    gaps_out = 0, -- could also use a table { top=0, left=0, right=0, bottom=0  },
 
     border_size = 2,
 

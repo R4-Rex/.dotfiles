@@ -1,25 +1,14 @@
-{ config, pkgs, ... }:
 {
-  programs.kitty = {
-    
-    enable = true;
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
+{
+  home.packages = with pkgs; [ kitty ];
 
-    settings = {
-
-      confirm_os_window_close = 0;
-      
-      #Fonts!
-      font_family = "JetbrainsMono Nerd Font";
-      font_size = 14;
-      
-      # Window layout
-      remember_window_size = true;
-      initial_window_width = 1200;
-      initial_window_height = 700;
-    };
-    
-    keybindings = {
-
-    };
+  xdg.configFile."kitty" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/kitty/.config/";
+    recursive = true;
   };
 }

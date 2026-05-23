@@ -164,6 +164,8 @@ alias nsweep='sudo nix-store --gc && sudo nix-collect-garbage -d'
 alias nopt='nix-collect-garbage -d && nix-store --optimize'
 alias nix-env-old='nix-env --profile /nix/var/nix/profiles/system --delete-generations old'
 
+alias hmex='home-manager expire-generations'
+
 if [[ -n "$ZSH_DEBUGRC" ]]; then
   zprof
 fi

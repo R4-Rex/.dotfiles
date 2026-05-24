@@ -459,16 +459,18 @@
     "neonix": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
+        "plugins-arete": "plugins-arete",
+        "plugins-cord": "plugins-cord",
         "plugins-lze": "plugins-lze",
         "plugins-lzextras": "plugins-lzextras",
         "wrappers": "wrappers"
       },
       "locked": {
-        "lastModified": 1779535214,
-        "narHash": "sha256-X56aNm9HGhQ26bXHFSRXKRbERJQGIGxLy31CFOS6t88=",
+        "lastModified": 1779632054,
+        "narHash": "sha256-382oCcW4lmGAnanEkLfb/VKtFgDha6ZTcfjYREP1tA8=",
         "owner": "Rex-Prime",
         "repo": "neonix-wrapper",
-        "rev": "912869cc679cad170b93c229e0607a438c73c710",
+        "rev": "f9db0c3f7a1389820faa27330cf2696b9810cac6",
         "type": "github"
       },
       "original": {
@@ -590,6 +592,38 @@
         "owner": "NixOS",
         "ref": "nixos-25.11",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "plugins-arete": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779554625,
+        "narHash": "sha256-VI2hpqGEebGOSJkPEH2BOFBdsx5PY4yl7AdloNo1X+U=",
+        "owner": "szymonwilczek",
+        "repo": "arete.nvim",
+        "rev": "80948adc43c92e4baeee77fdf252652ac0f03b14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "szymonwilczek",
+        "repo": "arete.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-cord": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776152799,
+        "narHash": "sha256-J1Hc38vrltbRQi+ztiMMu1G6z3N1PVtFxQ7qMGsgq00=",
+        "owner": "vyfor",
+        "repo": "cord.nvim",
+        "rev": "0be090969e978f7442870ef227e09eff7bf3480d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vyfor",
+        "repo": "cord.nvim",
         "type": "github"
       }
     },

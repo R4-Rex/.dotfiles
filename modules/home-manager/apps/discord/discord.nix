@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, ... }:
 {
 
   services.arrpc = {
@@ -9,8 +9,9 @@
 
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
-  xdg.configFile."discord/settings.json".force = true;
-
+  home.file.".config/discord/settings.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink ./.config/settings.json;
+  };
   programs.nixcord = {
     enable = true;
     #vesktop.enable = true;
@@ -19,15 +20,7 @@
       equicord.enable = true;
       krisp.enable = true;
       openASAR.enable = true;
-      settings = {
-        arRPC = true;
-        hardwareAcceleration = false;
-        mainWindowFrameless = true;
-        enableSplashScreen = false;
-        BACKGROUND_COLOR = "#000000";
-      };
     };
-
     equicordConfig = {
       mainWindowFrameless = true;
       winNativeTitleBar = false;
@@ -44,9 +37,14 @@
     config = {
       useQuickCss = true;
       disableMinSize = true;
-      themes = { };
+      themes = {
+        # local dirs
+      };
+      enabledThemes = [
+      ];
       themeLinks = [
-        "https://raw.githubusercontent.com/UserPFP/UserPFP/main/userpfp.theme.css"
+      ];
+      enabledThemeLinks = [
       ];
       #frameless = true; # The client doesnt have any frame
       plugins = {
@@ -128,6 +126,7 @@
         unindent.enable = true;
         unlockedAvatarZoom.enable = true;
         userVoiceShow.enable = true;
+        UserPFP.enable = true;
         USRBG.enable = true;
         validReply.enable = true;
         validUser.enable = true;
@@ -144,230 +143,228 @@
       @import url(https://davart154.github.io/Themes/Snippets/Colored%20Mentions/ColoredMentionsSource.css);
       @import url('https://discordstyles.github.io/Addons/windows-titlebar.css');
       @import url('https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/StageRecolor.css');
-
-      .winButtons_c38106,
-      .winButtonsWithDivider_c38106 {
-        display: none !important;
+        .winButtons_c38106 {
+          display: none !important;
         }
       /* Normal state
-      [href*="youtu.be"],
-      [href*="youtube.com"] {
-          font-weight: 700;
-          background-image: linear-gradient(45deg, #ff0000, #ff0000, #ffffff, #ffffff);
-          background-size: 200% 100%;
-          background-position: 0% 50%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          transition: background-position 0.5s ease, text-shadow 0.3s ease;
-      }
+            [href*="youtu.be"],
+            [href*="youtube.com"] {
+                font-weight: 700;
+                background-image: linear-gradient(45deg, #ff0000, #ff0000, #ffffff, #ffffff);
+                background-size: 200% 100%;
+                background-position: 0% 50%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: background-position 0.5s ease, text-shadow 0.3s ease;
+            }
 
-      /* Interactive hover effect 
-      [href*="youtu.be"]:hover,
-      [href*="youtube.com"]:hover {
-          background-image: linear-gradient(
-              45deg, 
-              #ff0000 0%, 
-              #ff0000 45%, 
-              #ffffff 50%, 
-              #ff0000 55%, 
-              #ff0000 100%
-          );
-          animation: curved-line 0.5s ease-in-out infinite alternate; /* Smooth looping */
-      /*text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.6); /* Subtle glow 
-      //}
+            /* Interactive hover effect 
+            [href*="youtu.be"]:hover,
+            [href*="youtube.com"]:hover {
+                background-image: linear-gradient(
+                    45deg, 
+                    #ff0000 0%, 
+                    #ff0000 45%, 
+                    #ffffff 50%, 
+                    #ff0000 55%, 
+                    #ff0000 100%
+                );
+                animation: curved-line 0.5s ease-in-out infinite alternate; /* Smooth looping */
+            /*text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.6); /* Subtle glow 
+            //}
 
-      /* Keyframes for smooth cycling
-      @keyframes curved-line {
-          0% {
-              background-position: 0% 50%;
-          }
-          100% {
-              background-position: 100% 50%;
-          }
-      }
-      */
-      /*
+            /* Keyframes for smooth cycling
+            @keyframes curved-line {
+                0% {
+                    background-position: 0% 50%;
+                }
+                100% {
+                    background-position: 100% 50%;
+                }
+            }
+            */
+            /*
 
-      [href*="twitch.tv"], [href*="twitch.com"] {
-          color:#b700ff !important;
-          font-weight: 700;
-      }
-      [href*="spotify.com"] {
-          background: -webkit-linear-gradient(80deg, rgb(0, 255, 34), rgb(68, 255, 11), #ccffc5);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 700;
-      }
-      [href*="discord.com/channels/"] {
-          color:#7289da !important;
-      }
-      [href*="discord.com/channels/"]::before {
-          content:'Jump to Message : ';
-          font-size:16px;
-          font-weight:700;
-          color: #603cff;
-      }
-      [href*="reddit.com"] {
-          color:#e05a0c !important; 
-          font-weight: 700;
-      }
-      [href*="instagram.com/"]{
-          background: -webkit-linear-gradient(80deg, rgb(255, 238, 0), rgb(255, 157, 11), #b700ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 700;
-      } 
-      [href*="twitter.com/"]{
-          color:#00acee !important;
-          font-weight: 700;
-      }
-      [href*="betterdiscord.app/"],
-      [href*="discord.gg/"] {
-          color:#7289da !important;
-          font-weight: 700;
-      }
-      [href*="github.com"]{
-          color:#00f0a8 !important;
-          font-weight: 700;
-      }
+            [href*="twitch.tv"], [href*="twitch.com"] {
+                color:#b700ff !important;
+                font-weight: 700;
+            }
+            [href*="spotify.com"] {
+                background: -webkit-linear-gradient(80deg, rgb(0, 255, 34), rgb(68, 255, 11), #ccffc5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+            }
+            [href*="discord.com/channels/"] {
+                color:#7289da !important;
+            }
+            [href*="discord.com/channels/"]::before {
+                content:'Jump to Message : ';
+                font-size:16px;
+                font-weight:700;
+                color: #603cff;
+            }
+            [href*="reddit.com"] {
+                color:#e05a0c !important; 
+                font-weight: 700;
+            }
+            [href*="instagram.com/"]{
+                background: -webkit-linear-gradient(80deg, rgb(255, 238, 0), rgb(255, 157, 11), #b700ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+            } 
+            [href*="twitter.com/"]{
+                color:#00acee !important;
+                font-weight: 700;
+            }
+            [href*="betterdiscord.app/"],
+            [href*="discord.gg/"] {
+                color:#7289da !important;
+                font-weight: 700;
+            }
+            [href*="github.com"]{
+                color:#00f0a8 !important;
+                font-weight: 700;
+            }
 
-      [data-list-item-id="guildsnav___home"] {
-          content: url("https://img.pixers.pics/pho_wat(s3:700/FO/10/08/92/84/700_FO10089284_e45d0c5f8754290d97528f7bd3544331.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/posters-yin-yang-symbol-on-a-dark-background.jpg.jpg");
-          width: 110%;
-          /* Adjust to 100% of the parent container */
-          /*height: 110%;
-          /* Same as width to maintain proportion */
-          /*object-fit: cover;
-          /* Ensures the image covers the entire area */
-          /*opacity: 0.5;
-          /* Keeps the semi-transparent effect */
-          /*padding: 0;
-          /* Removes any extra space */
-          /*border: transparent;
-          /* Removes the negative border */
-      /*}
+            [data-list-item-id="guildsnav___home"] {
+                content: url("https://img.pixers.pics/pho_wat(s3:700/FO/10/08/92/84/700_FO10089284_e45d0c5f8754290d97528f7bd3544331.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/posters-yin-yang-symbol-on-a-dark-background.jpg.jpg");
+                width: 110%;
+                /* Adjust to 100% of the parent container */
+                /*height: 110%;
+                /* Same as width to maintain proportion */
+                /*object-fit: cover;
+                /* Ensures the image covers the entire area */
+                /*opacity: 0.5;
+                /* Keeps the semi-transparent effect */
+                /*padding: 0;
+                /* Removes any extra space */
+                /*border: transparent;
+                /* Removes the negative border */
+            /*}
 
-      [data-list-item-id="guildsnav___home"]:hover {
-          opacity: 1;
-          transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-      }
+            [data-list-item-id="guildsnav___home"]:hover {
+                opacity: 1;
+                transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            }
 
-      @keyframes rainbow {
-          0% {
-              color: red;
-          }
+            @keyframes rainbow {
+                0% {
+                    color: red;
+                }
 
-          14% {
-              color: orange;
-          }
+                14% {
+                    color: orange;
+                }
 
-          28% {
-              color: yellow;
-          }
+                28% {
+                    color: yellow;
+                }
 
-          42% {
-              color: green;
-          }
+                42% {
+                    color: green;
+                }
 
-          57% {
-              color: blue;
-          }
+                57% {
+                    color: blue;
+                }
 
-          71% {
-              color: indigo;
-          }
+                71% {
+                    color: indigo;
+                }
 
-          85% {
-              color: violet;
-          }
+                85% {
+                    color: violet;
+                }
 
-          100% {
-              color: red;
-          }
-      }
+                100% {
+                    color: red;
+                }
+            }
 
-      .username_c19a55:hover {
-          animation: rainbow 3s infinite;
-          /* Adjust duration and timing as needed */
-      /*}
+            .username_c19a55:hover {
+                animation: rainbow 3s infinite;
+                /* Adjust duration and timing as needed */
+            /*}
 
-      /*
-      @keyframes rainbow_list {
-          0% {
-              color: red;
-          }
+            /*
+            @keyframes rainbow_list {
+                0% {
+                    color: red;
+                }
 
-          14% {
-              color: orange;
-          }
+                14% {
+                    color: orange;
+                }
 
-          28% {
-              color: yellow;
-          }
+                28% {
+                    color: yellow;
+                }
 
-          42% {
-              color: #00ff00;
-          }
+                42% {
+                    color: #00ff00;
+                }
 
-          57% {
-              color: blue;
-          }
+                57% {
+                    color: blue;
+                }
 
-          71% {
-              color: indigo;
-          }
+                71% {
+                    color: indigo;
+                }
 
-          85% {
-              color: #ff00ff;
-          }
+                85% {
+                    color: #ff00ff;
+                }
 
-          100% {
-              color: red;
-          }
-      }
-      */
+                100% {
+                    color: red;
+                }
+            }
+            */
 
-      [class^=chat_] [class*=textArea_] {
-          margin-right: 24px;
+            [class^=chat_] [class*=textArea_] {
+                margin-right: 24px;
 
-          +[class^=buttons_] {
-              position: absolute;
-              right: 0;
-              background-color: hsl(var(--primary-220-hsl) / 0.5);
-              backdrop-filter: blur(3px);
-              border-radius: 8px;
+                +[class^=buttons_] {
+                    position: absolute;
+                    right: 0;
+                    background-color: hsl(var(--primary-220-hsl) / 0.5);
+                    backdrop-filter: blur(3px);
+                    border-radius: 8px;
 
-              &:not(:hover)>:not(:last-child) {
-                  display: none;
-              }
+                    &:not(:hover)>:not(:last-child) {
+                        display: none;
+                    }
 
-              /* Send message button fix */
-              &:not(:hover)>[class^=container_] button>div {
-                  margin-left: 8px;
-              }
-          }
-      }
+                    /* Send message button fix */
+                    &:not(:hover)>[class^=container_] button>div {
+                        margin-left: 8px;
+                    }
+                }
+            }
 
 
 
-      /*Collapsable Message action*/
+            /*Collapsable Message action*/
 
-      /* 
-      [class^=buttonsInner_]:not(:hover)>:is(
-        [role=button]:not(:last-child), [class^=separator_]
-      ) {
-        display: none;
-      }
-      */
-      /* Replace 'your-discord-id' with your actual Discord ID
-      [data-list-item-id*="1010770302642434159"] .name_a31c43.username_de3235 {
-          color: #ff0000 !important; /* Your desired color 
-          }*/
+            /* 
+            [class^=buttonsInner_]:not(:hover)>:is(
+              [role=button]:not(:last-child), [class^=separator_]
+            ) {
+              display: none;
+            }
+            */
+            /* Replace 'your-discord-id' with your actual Discord ID
+            [data-list-item-id*="1010770302642434159"] .name_a31c43.username_de3235 {
+                color: #ff0000 !important; /* Your desired color 
+                }*/
 
-      /*span[data-user-id="1010770302642434159"] .name_a31c43.username_de3235 {
-          animation: rainbow_list 2s infinite !important;
-      }
-      /*<span class="username_a31c43"><span class="name_a31c43 username_de3235 desaturateUserColors_c7819f" style="color: rgb(0, 19, 255);">ヘッカー</span></span>
+            /*span[data-user-id="1010770302642434159"] .name_a31c43.username_de3235 {
+                animation: rainbow_list 2s infinite !important;
+            }
+            /*<span class="username_a31c43"><span class="name_a31c43 username_de3235 desaturateUserColors_c7819f" style="color: rgb(0, 19, 255);">ヘッカー</span></span>
 
     '';
   };

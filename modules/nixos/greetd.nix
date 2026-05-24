@@ -1,18 +1,24 @@
 {
   pkgs,
   inputs,
+  config,
   userSettings,
   ...
 }:
 
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-  hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
+  sessionsDir = "${config.services.displayManager.sessionData.desktops}/share";
   startcommand = "start-hyprland";
   #  x11-sessions = "/run/current-system/sw/share/xsessions";
 
 in
 {
+  users.users.greeter = {
+    isNormalUser = false;
+    extraGroups = [ "seat" ];
+  };
+
   services.greetd = {
     enable = true;
     settings = {
@@ -38,7 +44,7 @@ in
         --xsessions ${x11-sessions}
       */
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --cmd ${startcommand} --window-padding 2";
+        command = "${tuigreet} --time --remember --remember-session --sessions ${sessionsDir}/wayland-sessions --cmd ${startcommand} --window-padding 2";
         user = "greeter";
       };
     };

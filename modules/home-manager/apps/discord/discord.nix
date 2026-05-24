@@ -77,6 +77,7 @@
         hideMedia.enable = true;
         ircColors.enable = true;
         loadingQuotes.enable = true;
+        imageZoom.enable = true;
         implicitRelationships.enable = true;
         memberCount.enable = true;
         messageClickActions.enable = true;

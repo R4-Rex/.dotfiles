@@ -9,7 +9,6 @@
 
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
-
   xdg.configFile."discord/settings.json".force = true;
 
   programs.nixcord = {
@@ -25,6 +24,7 @@
         hardwareAcceleration = false;
         mainWindowFrameless = true;
         enableSplashScreen = false;
+        BACKGROUND_COLOR = "#000000";
       };
     };
 

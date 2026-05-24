@@ -11,31 +11,33 @@
 
   programs.nixcord = {
     enable = true;
-    vesktop.enable = true;
-    /*
-        discord = {
-        vencord.enable = false;
-        equicord.enable = true;
-        krisp.enable = true;
-        openASAR.enable = true;
+    #vesktop.enable = true;
+    discord = {
+      vencord.enable = false;
+      equicord.enable = true;
+      krisp.enable = true;
+      openASAR.enable = true;
       settings = {
         arRPC = true;
         hardwareAcceleration = false;
         mainWindowFrameless = true;
         enableSplashScreen = false;
       };
-      };
-    */
-    /*
-      equicordConfig = {
-        mainWindowFrameless = true;
-      };
-    */
-    vesktopConfig = {
-      hardwareAcceleration = false;
-      arRPC = true;
-      enableSplashScreen = false;
     };
+
+    equicordConfig = {
+      mainWindowFrameless = true;
+      winNativeTitleBar = false;
+      frameless = true;
+    };
+
+    /*
+        vesktopConfig = {
+        hardwareAcceleration = false;
+        arRPC = true;
+        enableSplashScreen = false;
+      };
+    */
     config = {
       useQuickCss = true;
       disableMinSize = true;
@@ -139,11 +141,11 @@
       @import url(https://davart154.github.io/Themes/Snippets/Colored%20Mentions/ColoredMentionsSource.css);
       @import url('https://discordstyles.github.io/Addons/windows-titlebar.css');
       @import url('https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/StageRecolor.css');
-      @import url('https://raw.githubusercontent.com/retrilzzy/hide-discord-window-controls/refs/heads/main/hide-window-controls.css');
 
-      filter:contrast(.2) brightness(1.2) hsla(100 0 25, 2.5);
-
-      font-family:"Jetbrains Mono Nerd Font", Jetbrains-Mono
+      .winButtons_c38106,
+      .winButtonsWithDivider_c38106 {
+        display: none !important;
+        }
       /* Normal state
       [href*="youtu.be"],
       [href*="youtube.com"] {

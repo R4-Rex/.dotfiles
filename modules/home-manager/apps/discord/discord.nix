@@ -13,11 +13,17 @@
     enable = true;
     vesktop.enable = true;
     /*
-      discord = {
-        #vencord.enable = false;
-        #equicord.enable = true;
+        discord = {
+        vencord.enable = false;
+        equicord.enable = true;
         krisp.enable = true;
         openASAR.enable = true;
+      settings = {
+        arRPC = true;
+        hardwareAcceleration = false;
+        mainWindowFrameless = true;
+        enableSplashScreen = false;
+      };
       };
     */
     /*
@@ -27,7 +33,7 @@
     */
     vesktopConfig = {
       hardwareAcceleration = false;
-      arRPC = false;
+      arRPC = true;
       enableSplashScreen = false;
     };
     config = {
@@ -66,17 +72,11 @@
         gifPaste.enable = true;
         greetStickerPicker.enable = true;
         hideMedia.enable = true;
-        ignoreActivities = {
-          enable = true;
-          ignorePlaying = true;
-          ignoreListening = true;
-          ignoreWatching = true;
-          ignoreCompeting = true;
-        };
         ircColors.enable = true;
         loadingQuotes.enable = true;
         implicitRelationships.enable = true;
         memberCount.enable = true;
+        messageClickActions.enable = true;
         messageLogger = {
           enable = true;
           collapseDeleted = true;
@@ -106,7 +106,6 @@
         replyTimestamp.enable = true;
         ReviewDB.enable = true;
         serverInfo.enable = true;
-        serverListIndicators.enable = true;
         showConnections.enable = true;
         showHiddenThings.enable = true;
         showHiddenChannels.enable = true;
@@ -130,7 +129,7 @@
         viewIcons.enable = true;
         voiceChatDoubleClick.enable = true;
         volumeBooster.enable = true;
-        webRichPresence.enable = true; # Web RPC doesnt work at the moment
+        #webRichPresence.enable = true; # Web RPC doesnt work at the moment
         youtubeAdblock.enable = true;
       };
     };

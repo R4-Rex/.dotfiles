@@ -9,6 +9,9 @@
 
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
+
+  xdg.configFile."discord/settings.json".force = true;
+
   programs.nixcord = {
     enable = true;
     #vesktop.enable = true;

@@ -49,8 +49,10 @@
       enabledThemes = [
       ];
       themeLinks = [
+        "https://raw.githubusercontent.com/UserPFP/UserPFP/main/userpfp.theme.css"
       ];
       enabledThemeLinks = [
+        "https://raw.githubusercontent.com/UserPFP/UserPFP/main/userpfp.theme.css"
       ];
       #frameless = true; # The client doesnt have any frame
       plugins = {

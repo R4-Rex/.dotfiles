@@ -11,6 +11,7 @@
 
   home.file.".config/discord/settings.json" = {
     source = config.lib.file.mkOutOfStoreSymlink ./.config/settings.json;
+    force = true;
   };
   programs.nixcord = {
     enable = true;

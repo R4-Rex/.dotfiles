@@ -1,4 +1,9 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 {
 
   services.arrpc = {
@@ -15,26 +20,26 @@
   };
   programs.nixcord = {
     enable = true;
-    #vesktop.enable = true;
-    discord = {
-      vencord.enable = false;
-      equicord.enable = true;
-      krisp.enable = true;
-      openASAR.enable = true;
-    };
-    equicordConfig = {
-      mainWindowFrameless = true;
-      winNativeTitleBar = false;
-      frameless = true;
-    };
-
+    vesktop.enable = true;
     /*
-        vesktopConfig = {
-        hardwareAcceleration = false;
-        arRPC = true;
-        enableSplashScreen = false;
+      discord = {
+        vencord.enable = false;
+        equicord.enable = false;
+        krisp.enable = true;
+        openASAR.enable = true;
+      };
+      equicordConfig = {
+        mainWindowFrameless = true;
+        winNativeTitleBar = false;
+        frameless = true;
       };
     */
+
+    vesktopConfig = {
+      hardwareAcceleration = false;
+      arRPC = true;
+      enableSplashScreen = false;
+    };
     config = {
       useQuickCss = true;
       disableMinSize = true;
@@ -128,14 +133,14 @@
         unindent.enable = true;
         unlockedAvatarZoom.enable = true;
         userVoiceShow.enable = true;
-        UserPFP.enable = true;
+        #UserPFP.enable = true;
         USRBG.enable = true;
         validReply.enable = true;
         validUser.enable = true;
         viewIcons.enable = true;
         voiceChatDoubleClick.enable = true;
         volumeBooster.enable = true;
-        #webRichPresence.enable = true; # Web RPC doesnt work at the moment
+        webRichPresence.enable = true; # Web RPC doesnt work at the moment
         youtubeAdblock.enable = true;
       };
     };

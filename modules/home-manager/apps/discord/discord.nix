@@ -61,6 +61,7 @@
         betterGifPicker.enable = true;
         betterSettings.enable = true;
         betterUploadButton.enable = true;
+        betterRoleContext.enable = true;
         biggerStreamPreview.enable = true;
         callTimer = {
           enable = true;
@@ -70,6 +71,7 @@
         ClearURLs.enable = true;
         crashHandler.enable = true;
         disableCallIdle.enable = true;
+        decor.enable = true;
         dontRoundMyTimestamps.enable = true;
         favoriteEmojiFirst.enable = true;
         fakeNitro.enable = true;
@@ -109,10 +111,13 @@
         noUnblockToJump.enable = true;
         OnePingPerDM.enable = true;
         pauseInvitesForever.enable = true;
+        petpet.enable = true;
         pictureInPicture.enable = true;
+        PinDMs.enable = true;
         platformIndicators.enable = true;
         plainFolderIcon.enable = true;
-        previewMessage.enable = true;
+        #previewMessage.enable = true;
+        quickReply.enable = true;
         readAllNotificationsButton.enable = true;
         relationshipNotifier.enable = true;
         replyTimestamp.enable = true;
@@ -140,7 +145,9 @@
         validReply.enable = true;
         validUser.enable = true;
         viewIcons.enable = true;
+        viewRaw.enable = true;
         voiceChatDoubleClick.enable = true;
+        voiceDownload.enable = true;
         volumeBooster.enable = true;
         webRichPresence.enable = true; # Web RPC doesnt work at the moment
         youtubeAdblock.enable = true;

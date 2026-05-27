@@ -152,9 +152,11 @@
       @import url(https://davart154.github.io/Themes/Snippets/Colored%20Mentions/ColoredMentionsSource.css);
       @import url('https://discordstyles.github.io/Addons/windows-titlebar.css');
       @import url('https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/StageRecolor.css');
+        /*
         .winButtons_c38106 {
           display: none !important;
         }
+        */
       /* Normal state
             [href*="youtu.be"],
             [href*="youtube.com"] {

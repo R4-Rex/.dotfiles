@@ -1,7 +1,8 @@
 {
   imports = [
-  
-  ./gcc.nix
+
+    ./gcc.nix
+    ./python.nix
 
   ];
 }

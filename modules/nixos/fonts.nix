@@ -7,5 +7,6 @@
     nerd-fonts.meslo-lg
     noto-fonts
     dejavu_fonts
+    nerd-fonts.dejavu-sans-mono
   ];
 }

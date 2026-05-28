@@ -159,8 +159,8 @@ alias of='onefetch'
 
 alias ngc='sudo nix-collect-garbage'
 alias nsweep='sudo nix-store --gc && sudo nix-collect-garbage -d'
-alias nopt='nix-collect-garbage -d && nix-store --optimize'
-alias nix-env-old='nix-env --profile /nix/var/nix/profiles/system --delete-generations old'
+alias nopt='sudo nix-collect-garbage -d && nix-store --optimize'
+alias nix-env-old='sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old'
 
 alias hmex='home-manager expire-generations'
 

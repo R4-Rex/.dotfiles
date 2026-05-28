@@ -56,7 +56,7 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "28")
 
 -----------------------
@@ -204,6 +204,7 @@ hl.config({
   misc = {
     force_default_wallpaper = 0, -- Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
+    font_family = "JetBrainsMonoNF-Regular",
   },
 })
 

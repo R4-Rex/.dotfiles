@@ -28,6 +28,9 @@ in {
     package = bibataHyprcursor;
     name = "Bibata-Modern-Ice";
     size = 28;
+    hyprcursor = {
+      enable = true;
+      };
     gtk.enable = true;
     x11.enable = true;
   };

@@ -277,17 +277,15 @@ hl.bind(
 )
 
 -- Screenshots
-hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("grimblast copy area"))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("flameshot gui"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("flameshot gui -s -c"))
 hl.bind(
-  mainMod .. " + SHIFT + S",
-  hl.dsp.exec_cmd(
-    "grimblast copysave area $HOME/Screenshots/screenshot-screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"
-  )
+  mainMod .. " + PRINT",
+  hl.dsp.exec_cmd("flameshot full -c -p $HOME/Screenshots/screenshot--$(date +%Y_%m_%d_%H)-$(date +%s).png")
 )
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("grimblast copy screen"))
 hl.bind(
   mainMod .. " + SHIFT + PRINT",
-  hl.dsp.exec_cmd("grimblast copysave screen $HOME/Screenshots/screenshot--$(date +%Y_%m_%d_%H)-$(date +%s).png")
+  hl.dsp.exec_cmd("flameshot full -s -p $HOME/Screenshots/screenshot--$(date +%Y_%m_%d_%H)-$(date +%s).png")
 )
 
 -- Move focus with mainMod + arrow keys

@@ -1,9 +1,9 @@
 {
   imports = [
-    
+
     ./onefetch.nix
     ./clipboard.nix
-    ./grim.nix
+    ./screenshot.nix
     ./fastfetch/fastfetch.nix
     ./fzf.nix
     ./eza.nix

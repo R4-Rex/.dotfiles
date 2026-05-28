@@ -21,6 +21,7 @@ bibataHyprcursor = pkgs.stdenvNoCC.mkDerivation {
 in {
   home.packages = [ 
     bibataHyprcursor
+    pkgs.bibata-cursors
   ];
 
 # Set cursor theme for user sessions

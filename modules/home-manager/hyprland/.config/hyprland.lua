@@ -45,7 +45,6 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("waybar")
   hl.exec_cmd("[workspace 1 silent] " .. terminal)
   hl.exec_cmd("[workspace 10 silent] " .. browser)
-  hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 28")
   -- Clipboard management with cliphist
   hl.exec_cmd("wl-paste --type text --watch cliphist store")
   hl.exec_cmd("wl-paste --type image --watch cliphist store")

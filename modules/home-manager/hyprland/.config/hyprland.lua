@@ -59,6 +59,10 @@ end)
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "28")
 
+-- Screenshot
+
+hl.env("SLURP_ARGS", "-d -B F050F022 -b 10101022 -c ff00ff")
+
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
@@ -281,20 +285,20 @@ hl.bind(
 hl.bind(
   mainMod .. " + SHIFT + X",
   hl.dsp.exec_cmd(
-    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grim -g "$(slurp)" -t ppm - | satty --filename - --fullscreen --output-filename $FILENAME'
+    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grimblast save area -n - | satty --filename - --fullscreen --output-filename $FILENAME' -- grimblast only pipes the image to stdout
   )
 )
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grimblast copy area -n'))
 hl.bind(
   mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
-    'FILENAME="screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grim - | tee $FILENAME | wl-copy && notify-send "Grim" "Copied to clipboard and saved to $HOME/Screenshots/$FILENAME"'
+    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grimblast copysave screen $FILENAME && notify-send "Grim" "Copied to clipboard and saved to $HOME/Screenshots/$FILENAME"'
   )
 )
 hl.bind(
   mainMod .. " + SHIFT + PRINT",
   hl.dsp.exec_cmd(
-    'FILENAME="screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grim - | satty --filename - --fullscreen --output-filename $FILENAME'
+    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grimblast save screen - | satty --filename - --fullscreen --output-filename $FILENAME'
   )
 )
 

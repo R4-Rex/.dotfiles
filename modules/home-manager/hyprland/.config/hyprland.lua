@@ -278,15 +278,24 @@ hl.bind(
 )
 
 -- Screenshots
-hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("flameshot gui"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("flameshot gui -s -c"))
+hl.bind(
+  mainMod .. " + SHIFT + X",
+  hl.dsp.exec_cmd(
+    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grim -g "$(slurp)" -t ppm - | satty --filename - --fullscreen --output-filename $FILENAME'
+  )
+)
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 hl.bind(
   mainMod .. " + PRINT",
-  hl.dsp.exec_cmd("flameshot full -c -p $HOME/Screenshots/screenshot--$(date +%Y_%m_%d_%H)-$(date +%s).png")
+  hl.dsp.exec_cmd(
+    'FILENAME="screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grim - | tee $FILENAME | wl-copy && notify-send "Grim" "Copied to clipboard and saved to $HOME/Screenshots/$FILENAME"'
+  )
 )
 hl.bind(
   mainMod .. " + SHIFT + PRINT",
-  hl.dsp.exec_cmd("flameshot full -s -p $HOME/Screenshots/screenshot--$(date +%Y_%m_%d_%H)-$(date +%s).png")
+  hl.dsp.exec_cmd(
+    'FILENAME="screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grim - | satty --filename - --fullscreen --output-filename $FILENAME'
+  )
 )
 
 -- Move focus with mainMod + arrow keys

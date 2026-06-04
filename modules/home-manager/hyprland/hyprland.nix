@@ -4,7 +4,17 @@
 # ~/.dotfiles/hypr in the Nix store.
 # Edits in .dotfiles/hypr take effect immediately in the config.
 {
-  xdg.configFile."hypr/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/";
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    configType = "lua";
+    extraConfig = ''
+      dofile(os.getenv("HOME") .. "/dotnix/modules/home-manager/hyprland/.config/realconfig.lua")
+    '';
   };
+  /*
+  xdg.configFile."hypr/therealconfig/hypr.lua" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/therealconfig/hypr.lua";
+  };
+  */
 }

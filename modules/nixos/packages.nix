@@ -12,6 +12,8 @@
 
     kitty
 
+    yt-dlp
+
     # Image Viewer
     swayimg
 

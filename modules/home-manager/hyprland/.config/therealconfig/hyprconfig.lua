@@ -266,7 +266,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- dwindle
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle
 
 -- Bar
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_waybar.sh"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/hypr/therealconfig/scripts/toggle_waybar.sh"))
 
 -- Clipboard
 hl.bind(

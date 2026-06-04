@@ -31,6 +31,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland?ref=v0.55.2";
     };
+    hypr-dynamic-cursors = {
+      url = "github:VirtCode/hypr-dynamic-cursors";
+      inputs.hyprland.follows = "hyprland";
+    };
     # NixCord
     nixcord.url = "github:FlameFlag/nixcord";
 

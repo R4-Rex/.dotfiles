@@ -1,4 +1,4 @@
-{ config, lib, userSettings, ... }:
+{ config, inputs, pkgs, lib, userSettings, ... }:
 
 # This creates a symbolic symlink at ~/.config/hypr pointing to a copy of
 # ~/.dotfiles/hypr in the Nix store.
@@ -11,6 +11,7 @@
     extraConfig = ''
       require("therealconfig.hyprconfig")
     '';
+    plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors ];
   };
   xdg.configFile."hypr/therealconfig/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/therealconfig/";

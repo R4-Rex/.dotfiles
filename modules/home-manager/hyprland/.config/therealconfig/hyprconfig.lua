@@ -10,6 +10,12 @@
 -- require("myColors")
 
 ------------------
+----- PLUGINS ----
+------------------
+
+require("therealconfig.plugins.dynamic-cursor")
+
+------------------
 ---- MONITORS ----
 ------------------
 

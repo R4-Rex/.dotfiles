@@ -9,12 +9,10 @@
     enable = true;
     configType = "lua";
     extraConfig = ''
-      dofile(os.getenv("HOME") .. "/dotnix/modules/home-manager/hyprland/.config/realconfig.lua")
+      require("therealconfig.hyprconfig")
     '';
   };
-  /*
-  xdg.configFile."hypr/therealconfig/hypr.lua" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/therealconfig/hypr.lua";
+  xdg.configFile."hypr/therealconfig/" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/therealconfig/";
   };
-  */
 }

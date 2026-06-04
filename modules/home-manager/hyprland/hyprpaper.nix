@@ -16,13 +16,13 @@
       splash_offset = 2;
 
       preload = [
-        "~/wallpapers/batman-logo.jpg"
+        "~/wallpapers/round-thing.png"
       ];
 
       wallpaper = [
         {
           monitor = "VGA-1";
-          path = "~/wallpapers/batman-logo.jpg";
+          path = "~/wallpapers/round-thing.png";
           fit_mode = "cover";
         }
       ];

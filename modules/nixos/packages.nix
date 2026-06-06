@@ -10,6 +10,8 @@
 
     wget
 
+    jq
+
     kitty
 
     yt-dlp

@@ -38,6 +38,7 @@
     # NixCord
     nixcord.url = "github:FlameFlag/nixcord";
 
+    # Neonix
     neonix = {
       url = "github:Rex-Prime/neonix-wrapper";
     };

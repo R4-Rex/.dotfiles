@@ -287,6 +287,11 @@ hl.bind(
   )
 )
 
+-- Wayscriber
+hl.bind(
+  mainMod .. " + SHIFT + W",
+    hl.dsp.exec_cmd("wayscriber --active")
+)
 -- Screenshots
 hl.bind(
   mainMod .. " + SHIFT + X",

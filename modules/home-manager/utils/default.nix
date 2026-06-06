@@ -9,5 +9,6 @@
     ./eza.nix
     ./gnupg.nix
     ./resoltuion.nix
+    ./wayscriber.nix
   ];
 }

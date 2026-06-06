@@ -45,9 +45,7 @@
 
     # My Vars!
     myvars = {
-
       url = "path:///home/rex/.vars";
-
     };
 
   };

@@ -288,18 +288,15 @@ hl.bind(
 )
 
 -- Wayscriber
-hl.bind(
-  mainMod .. " + SHIFT + W",
-    hl.dsp.exec_cmd("wayscriber --active")
-)
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("wayscriber --active"))
 -- Screenshots
 hl.bind(
   mainMod .. " + SHIFT + X",
   hl.dsp.exec_cmd(
-    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grimblast save area -n - | satty --filename - --fullscreen --output-filename $FILENAME' -- grimblast only pipes the image to stdout
+    'FILENAME="$HOME/Screenshots/screenshot-$(date +%Y_%m_%d_%H)-$(date +%s).png"; grimblast save area -n --freeze'
   )
 )
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grimblast copy area -n'))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grimblast copy area -n"))
 hl.bind(
   mainMod .. " + PRINT",
   hl.dsp.exec_cmd(

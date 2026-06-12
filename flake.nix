@@ -22,6 +22,11 @@
     # Nix Packages!
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    # NUR!
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Home-Manager!
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -56,6 +61,7 @@
       home-manager,
       myvars,
       neonix,
+      nur,
       ...
     }@inputs:
 
@@ -77,7 +83,10 @@
 
       lib = nixpkgs.lib;
       system = systemSettings.system;
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ nur.overlays.default ];
+      };
 
       # Defines the System
       potato = lib.nixosSystem {
@@ -136,6 +145,7 @@
           inherit inputs; # Pass inputs if needed in home.nix
           inherit vars;
           inherit neonix;
+          inherit nur;
         };
 
         modules = [

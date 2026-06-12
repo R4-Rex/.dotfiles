@@ -24,8 +24,5 @@
 
     git
 
-    # Backup Browser
-    firefox
-
   ];
 }

@@ -1,11 +1,13 @@
 {
   imports = [
 
-  ./brave.nix
+    ./brave.nix
 
-  ./librewolf/librewolf.nix
+    ./librewolf/librewolf.nix
 
-  ./tor.nix
+    ./tor.nix
+
+    ./firefox.nix
 
   ];
 

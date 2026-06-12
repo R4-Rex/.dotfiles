@@ -7,7 +7,7 @@
 
     ./tor.nix
 
-    ./firefox.nix
+    ./firefox/firefox.nix
 
   ];
 

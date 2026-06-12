@@ -1,0 +1,17 @@
+[
+  "back-button"
+  "forward-button"
+  "stop-reload-button"
+  "customizableui-special-spring1"
+  "vertical-spacer"
+  "urlbar-container"
+  "ublock0_raymondhill_net-browser-action"
+  "customizableui-special-spring2"
+  "downloads-button"
+  "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
+  "unified-extensions-button"
+  "reset-pbm-toolbar-button"
+  "sidebar-button"
+  "_15bdb1ce-fa9d-4a00-b859-66c214263ac0_-browser-action"
+  "zotero_chnm_gmu_edu-browser-action"
+]

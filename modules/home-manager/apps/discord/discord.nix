@@ -2,9 +2,26 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }:
+let
+  vesktop-launcher = pkgs.writeShellScriptBin "vesktop" ''
+    #!${pkgs.bash}/bin/bash
+    exec ${pkgs.vesktop}/bin/vesktop \
+        --enable-features=VaapiVideoDecoder,VaapiVideoEncoder \
+        --use-gl=egl \
+        --ignore-gpu-blocklist \
+        --enable-gpu-rasterization \
+        --enable-wayland-ime \
+        --ozone-platform-hint=auto \
+        --enable-features=WaylandWindowDecorations \
+        "$@"
+  '';
+in
 {
+
+  imports = [ inputs.nixcord.homeModules.nixcord ];
 
   services.arrpc = {
     enable = true;
@@ -12,15 +29,26 @@
     systemdTarget = "default.target"; # Default
   };
 
-  imports = [ inputs.nixcord.homeModules.nixcord ];
-
   home.file.".config/discord/settings.json" = {
     source = config.lib.file.mkOutOfStoreSymlink ./.config/settings.json;
     force = true;
   };
+
+  xdg.desktopEntries.vesktop = {
+    name = "Vesktop";
+    exec = "${vesktop-launcher}/bin/vesktop";
+    icon = "vesktop";
+    type = "Application";
+    categories = [
+      "Network"
+      "InstantMessaging"
+    ];
+    genericName = null;
+  };
+
   programs.nixcord = {
     enable = true;
-    vesktop.enable = true;
+    discord.enable = false;
     /*
       discord = {
         vencord.enable = false;
@@ -35,11 +63,17 @@
       };
     */
 
-    vesktopConfig = {
-      hardwareAcceleration = false;
-      arRPC = true;
-      enableSplashScreen = false;
+    vesktop = {
+      enable = true;
+      settings = {
+        hardwareAcceleration = true;
+        hardwareVideoAcceleration = true;
+
+        arRPC = true;
+        enableSplashScreen = false;
+      };
     };
+
     config = {
       useQuickCss = true;
       disableMinSize = true;

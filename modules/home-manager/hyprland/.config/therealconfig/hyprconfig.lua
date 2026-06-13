@@ -36,7 +36,7 @@ local terminal = "kitty"
 local fileManager = "yazi"
 local menu = "rofi -show drun"
 local browser = "firefox"
-local discord = "vesktop"
+local discord = "vesktop --enable-features=VaapiVideoDecoder,VaapiVideoEncoder --use-gl=egl --ignore-gpu-blocklist --enable-gpu-rasterization --enable-wayland-ime --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations"
 -------------------
 ---- AUTOSTART ----
 -------------------

@@ -35,7 +35,7 @@ hl.monitor({
 local terminal = "kitty"
 local fileManager = "yazi"
 local menu = "rofi -show drun"
-local browser = "librewolf"
+local browser = "firefox"
 local discord = "vesktop"
 -------------------
 ---- AUTOSTART ----

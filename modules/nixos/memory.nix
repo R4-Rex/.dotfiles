@@ -1,31 +1,25 @@
 { config, pkgs, ... }:
-
 {
-  # zram - Compressed RAM (more efficient than swap)
+  boot.kernelModules = [ "zram" ];
   zramSwap = {
     enable = true;
-    memoryPercent = 50;  # 4GB of 8GB for zram
+    memoryPercent = 50;
     algorithm = "zstd";
     priority = 100;
   };
 
-# Kernel memory parameters
   boot.kernelParams = [
-    # Memory management
-    "vm.swappiness=60"          # Use swap more(100)/less(0) aggressively
-    "vm.vfs_cache_pressure=100" # Clear cache more aggressively
-    "vm.dirty_ratio=20"         # Write to disk sooner
-    "vm.dirty_background_ratio=5"
+    "vm.swappiness=180" # Use swap more(100)/less(0) aggressively
+    "vm.vfs_cache_pressure=50" # Clear cache more(100)/less(0) aggressively
+    "vm.dirty_ratio=10" # Write to disk sooner(0)
+    "vm.dirty_background_ratio=3"
   ];
-
-# Disk Based Swap
-
-  swapDevices = [
-  {
-    device = "/swapfile";
-    size = 8 * 1024; # 8GB swap
-    priority = 50;
-  }
-  ];
-
+  /*
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 8 * 1024;
+      }
+    ];
+  */
 }

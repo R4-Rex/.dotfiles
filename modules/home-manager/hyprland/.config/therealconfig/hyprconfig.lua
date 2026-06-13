@@ -36,7 +36,7 @@ local terminal = "kitty"
 local fileManager = "yazi"
 local menu = "rofi -show drun"
 local browser = "librewolf"
-
+local discord = "vesktop"
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -50,6 +50,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("waybar")
   hl.exec_cmd("[workspace 1 silent] " .. terminal)
+  hl.exec_cmd("[workspace 8 silent]" .. discord)
   hl.exec_cmd("[workspace 10 silent] " .. browser)
   -- Clipboard management with cliphist
   hl.exec_cmd("wl-paste --type text --watch cliphist store")

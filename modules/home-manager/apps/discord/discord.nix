@@ -119,7 +119,12 @@ in
         gifPaste.enable = true;
         greetStickerPicker.enable = true;
         hideMedia.enable = true;
-        ircColors.enable = true;
+        ircColors = {
+          enable = true;
+          applyColorOnlyInDms = true;
+          applyColorOnlyToUsersWithoutColor = true;
+          memberListColors = true;
+        };
         loadingQuotes.enable = true;
         imageZoom.enable = true;
         implicitRelationships.enable = true;

@@ -7,6 +7,8 @@
 
     git-crypt
 
+    git-filter-repo
+
   ];
 
 }

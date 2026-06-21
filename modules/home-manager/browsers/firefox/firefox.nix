@@ -75,7 +75,8 @@ in
           # Vertical Tabs
           "sidebar.verticalTabs" = true;
           "sidebar.revamp" = true;
-          "sidebar.main.tools" = ''["history","bookmarks"],{446900e4-71c2-419f-a6a7-df9c091e268b}'';
+          "sidebar.main.tools" =
+            ''["history","bookmarks"],{446900e4-71c2-419f-a6a7-df9c091e268b},jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack'';
           "toolkit.tabbox.switchByScrolling" = true;
         };
         extensions = {

@@ -2,6 +2,7 @@
   placements = {
     "widget-overflow-fixed-list" = [ "fxa-toolbar-menu-button" ];
     "unified-extensions-area" = [
+      "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
       "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
       "jid1-mnnxcxisbpnsxq_jetpack-browser-action"
       "sponsorblocker_ajay_app-browser-action"

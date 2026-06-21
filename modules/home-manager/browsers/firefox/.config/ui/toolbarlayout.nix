@@ -2,6 +2,8 @@
   placements = {
     "widget-overflow-fixed-list" = [ "fxa-toolbar-menu-button" ];
     "unified-extensions-area" = [
+      "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
+      "ublock0_raymondhill_net-browser-action"
       "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
       "jid1-mnnxcxisbpnsxq_jetpack-browser-action"
       "sponsorblocker_ajay_app-browser-action"
@@ -15,7 +17,6 @@
       "canvasblocker_kkapsner_de-browser-action"
       "firefox_tampermonkey_net-browser-action"
       "skipredirect_sblask-browser-action"
-      "nixpkgs-pr-tracker_tahayassine_me-browser-action"
       "_a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad_-browser-action"
       "control-panel-for-youtube_jbscript_dev-browser-action"
     ];
@@ -26,10 +27,9 @@
       "customizableui-special-spring1"
       "vertical-spacer"
       "urlbar-container"
-      "ublock0_raymondhill_net-browser-action"
+      "offline-qr-code_rugk_github_io-browser-action"
       "customizableui-special-spring2"
       "downloads-button"
-      "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
       "unified-extensions-button"
       "reset-pbm-toolbar-button"
       "sidebar-button"
@@ -60,7 +60,6 @@
     "skipredirect_sblask-browser-action"
     "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
     "reset-pbm-toolbar-button"
-    "nixpkgs-pr-tracker_tahayassine_me-browser-action"
     "_15bdb1ce-fa9d-4a00-b859-66c214263ac0_-browser-action"
     "_a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad_-browser-action"
     "zotero_chnm_gmu_edu-browser-action"

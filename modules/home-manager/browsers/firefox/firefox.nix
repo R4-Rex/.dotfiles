@@ -92,6 +92,8 @@ in
 
             raindropio
 
+            offline-qr-code-generator
+
             tampermonkey
 
             control-panel-for-youtube

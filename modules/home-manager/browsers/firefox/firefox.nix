@@ -86,6 +86,8 @@ in
             sponsorblock
             skip-redirect
 
+            auto-tab-discard
+
             bitwarden
 
             tampermonkey

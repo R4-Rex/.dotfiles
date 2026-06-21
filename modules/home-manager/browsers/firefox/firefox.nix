@@ -90,6 +90,8 @@ in
 
             bitwarden
 
+            raindropio
+
             tampermonkey
 
             control-panel-for-youtube

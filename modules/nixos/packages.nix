@@ -24,5 +24,10 @@
 
     git
 
+    # might want to use this option
+    # networking.firewall.checkReversePath
+    proton-vpn # gui
+    proton-vpn-cli
+
   ];
 }

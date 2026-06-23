@@ -12,6 +12,8 @@
 
     ./nix-tools.nix
 
+    ./utils/default.nix
+
     ./sound.nix
 
     ./fonts.nix

@@ -8,9 +8,6 @@
 {
   environment.systemPackages = with pkgs; [
 
-    wget
-
-    jq
 
     kitty
 

@@ -14,6 +14,6 @@
     plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors ];
   };
   xdg.configFile."hypr/therealconfig/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/hyprland/.config/therealconfig/";
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.rex.dotpath}/modules/home-manager/hyprland/.config/therealconfig/";
   };
 }

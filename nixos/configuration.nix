@@ -49,7 +49,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${userSettings.username} = {
+  users.users.${userSettings.rex.username} = {
     isNormalUser = true;
     description = "Rex";
     extraGroups = [ "networkmanager" "wheel" ];

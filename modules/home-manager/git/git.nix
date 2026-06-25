@@ -20,7 +20,7 @@
     user.name = vars.git.name;
     user.email = vars.git.email;
 
-    core.editor = userSettings.editor;
+    core.editor = userSettings.rex.editor;
 
     pull.rebase = false;
     push.autoSetupRemote = true;

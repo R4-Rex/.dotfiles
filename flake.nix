@@ -73,10 +73,12 @@
       };
 
       userSettings = {
-        username = "rex";
-        term = "kitty";
-        editor = "nvim";
-        dotpath = "/home/${userSettings.username}/dotnix";
+        rex = {
+          username = "rex";
+          term = "kitty";
+          editor = "nvim";
+          dotpath = "/home/${userSettings.rex.username}/dotnix";
+        };
       };
 
       vars = myvars.secrets;
@@ -137,7 +139,7 @@
       # STANDALONE HOME MANAGER CONFIGURATION (FLAKE-BASED)
       # Command: home-manager switch --flake #user
 
-      homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${userSettings.rex.username}" = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs;
 
         extraSpecialArgs = {
@@ -151,7 +153,7 @@
         modules = [
 
           # Home-manager module
-          ./home.nix
+          ./users/rex.nix
           #...
         ];
       };

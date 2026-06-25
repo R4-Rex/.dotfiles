@@ -4,7 +4,7 @@
     waybar
   ];
   xdg.configFile."waybar/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/waybar/.config/";
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.rex.dotpath}/modules/home-manager/waybar/.config/";
     recursive = true;
   };
 }

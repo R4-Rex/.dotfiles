@@ -30,7 +30,7 @@
   };
 
   home.file."wallpapers" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/wallpapers/";
+    source = config.lib.file.mkOutOfStoreSymlink "${userSettings.rex.dotpath}/wallpapers/";
     recursive = true;
   };
 }

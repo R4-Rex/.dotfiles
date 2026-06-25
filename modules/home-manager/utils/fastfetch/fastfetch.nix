@@ -12,5 +12,5 @@
   };
 
   xdg.configFile."fastfetch".source =
-    config.lib.file.mkOutOfStoreSymlink "${userSettings.dotpath}/modules/home-manager/utils/fastfetch/config/";
+    config.lib.file.mkOutOfStoreSymlink "${userSettings.rex.dotpath}/modules/home-manager/utils/fastfetch/config/";
 }

@@ -101,8 +101,8 @@ in
           enable = true;
           format = "human";
         };
-        BlurNSFW.enable = true;
-        ClearURLs.enable = true;
+        blurNsfw.enable = true;
+        clearUrls.enable = true;
         crashHandler.enable = true;
         disableCallIdle.enable = true;
         decor.enable = true;
@@ -137,7 +137,7 @@ in
           ignoreBots = true;
         };
         messageLatency.enable = true;
-        MutualGroupDMs.enable = true;
+        mutualGroupDms.enable = true;
         newGuildSettings.enable = true;
         noBlockedMessages.enable = true;
         noDevtoolsWarning.enable = true;
@@ -148,11 +148,11 @@ in
         noProfileThemes.enable = true;
         noTypingAnimation.enable = true;
         noUnblockToJump.enable = true;
-        OnePingPerDM.enable = true;
+        onePingPerDm.enable = true;
         pauseInvitesForever.enable = true;
         petpet.enable = true;
         pictureInPicture.enable = true;
-        PinDMs.enable = true;
+        pinDms.enable = true;
         platformIndicators.enable = true;
         plainFolderIcon.enable = true;
         #previewMessage.enable = true;
@@ -160,7 +160,7 @@ in
         readAllNotificationsButton.enable = true;
         relationshipNotifier.enable = true;
         replyTimestamp.enable = true;
-        ReviewDB.enable = true;
+        reviewDb.enable = true;
         serverInfo.enable = true;
         showConnections.enable = true;
         showHiddenThings.enable = true;
@@ -180,7 +180,7 @@ in
         unlockedAvatarZoom.enable = true;
         userVoiceShow.enable = true;
         #UserPFP.enable = true;
-        USRBG.enable = true;
+        usrbg.enable = true;
         validReply.enable = true;
         validUser.enable = true;
         viewIcons.enable = true;

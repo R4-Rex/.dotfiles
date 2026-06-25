@@ -106,7 +106,7 @@
 
         modules = [
 
-          ./nixos/configuration.nix
+          ./hosts/potato/configuration.nix
 
           {
             # given the users in this list the right to specify additional substituters via:

@@ -12,7 +12,7 @@
       ./hardware-configuration.nix
 
       # NixOS Modules
-      ../modules/nixos/default.nix
+      ../../modules/nixos/default.nix
     ];
 
   # Bootloader.

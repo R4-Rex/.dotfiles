@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,6 +6,6 @@
     gcc
     clang
     clang-tools
-  
-  ];   
+    valgrind
+  ];
 }

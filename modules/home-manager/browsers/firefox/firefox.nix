@@ -201,7 +201,7 @@ in
 
       OfferToSaveLoginsDefault = false;
 
-      PDFjs.Enabled = false;
+      PDFjs.Enabled = true;
 
       PasswordManagerEnabled = false;
 

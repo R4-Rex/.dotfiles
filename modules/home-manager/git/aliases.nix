@@ -37,6 +37,6 @@
 
     # Remote
     rom = "!git fetch && git rebase origin/main";
-    pushall = "!git push codeberg && git push github && git push origin";
+    pushall = "!git push origin && git push gitlab && git push codeberg";
   };
 }
